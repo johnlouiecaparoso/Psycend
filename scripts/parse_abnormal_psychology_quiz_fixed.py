@@ -31,18 +31,13 @@ EXPECTED_COUNTS = {
 
 
 def clean_text(value: str) -> str:
-    value = value.replace("\f", " ").replace("\ufffd", "").replace("­", "").replace("?", "-")
+    value = value.replace("\f", " ").replace("\ufffd", "").replace("\xad", "")
+    value = value.replace("â€“", "-").replace("â€”", "-")
     return re.sub(r"\s+", " ", value).strip()
 
 
 def clean_choice_text(value: str) -> str:
     return re.sub(r"^[A-D]\.\s*", "", clean_text(value))
-
-
-def slugify(value: str) -> str:
-    lowered = clean_text(value).lower()
-    lowered = re.sub(r"[^a-z0-9]+", "-", lowered)
-    return lowered.strip("-")
 
 
 def chapter_anchors(text: str) -> list[tuple[int, int]]:

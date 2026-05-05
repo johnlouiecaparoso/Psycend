@@ -1,6 +1,0 @@
-Source: CHAPTER-3.pdf
-Subject: Psychological Assessment
-Chapter label used: Chapter 3
-Topic label used: Statistics and Professional Foundations
-Parsed rows: 40
-Questions parsed: 1-40

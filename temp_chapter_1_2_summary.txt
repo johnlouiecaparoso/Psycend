@@ -1,7 +1,0 @@
-Source: CHAPTER-1-2.pdf
-Subject: Psychological Assessment
-Chapter label used: Chapter 1-2
-Topic label used: Testing and Assessment Foundations
-Parsed rows: 40
-Questions parsed: 1-40
-Note: The extracted PDF text did not expose a reliable boundary between Chapter 1 and Chapter 2, so the CSV preserves them under a combined chapter label.

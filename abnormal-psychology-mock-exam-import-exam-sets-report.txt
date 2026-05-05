@@ -12,4 +12,4 @@ Exam 8: 100 questions
 Exam 9: 100 questions
 Exam 10: 100 questions
 Exam 11: 100 questions
-Chapter and Topic were both set to `Exam N` because this import is organized by exam set, not by chapter or subtopic.
+Chapter and Topic were both set to `Exam N` because this import is organized by exam set, not by subtopic.

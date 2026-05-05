@@ -137,25 +137,30 @@ def parse_chapter_one(block: str) -> list[dict[str, str | int]]:
 
 
 def parse_chapter_two(block: str) -> list[dict[str, str | int]]:
-    pattern = re.compile(
-        r"^\s*(\d+)\.\s*(.*?)\s+([A-D])\.\s*(.*?)\s+"
-        r"A\.\s*(.*?)\s+B\.\s*(.*?)\s+C\.\s*(.*?)\s+D\.\s*(.*?)\s+"
-        r"Rationale:\s*(.*?)(?=^\s*\d+\.|\Z)",
-        flags=re.DOTALL | re.MULTILINE,
-    )
-
     rows: list[dict[str, str | int]] = []
-    for match in pattern.finditer(block):
+    for question_number, question_block in split_standard_questions(block):
+        cleaned = question_block.replace("\f", "\n")
+        cleaned = re.sub(r"\nSHORT QUIZ.*?\n", "\n", cleaned, flags=re.IGNORECASE)
+        cleaned = re.sub(r"\nchapter\s+2\s*\n", "\n", cleaned, flags=re.IGNORECASE)
+
+        match = re.search(
+            rf"^\s*{question_number}\.\s*(.*?)\s+([A-D])\.\s*(.*?)\n\s*A\.\s*(.*?)\n\s*B\.\s*(.*?)\n\s*C\.\s*(.*?)\n\s*D\.\s*(.*?)\n\s*Rationale:\s*(.*)$",
+            cleaned,
+            flags=re.DOTALL,
+        )
+        if not match:
+            raise ValueError(f"Unable to parse Chapter 2 question {question_number}.")
+
         rows.append(
             {
-                "number": int(match.group(1)),
-                "question": clean_text(match.group(2)),
-                "choice_1": clean_choice_text(match.group(5)),
-                "choice_2": clean_choice_text(match.group(6)),
-                "choice_3": clean_choice_text(match.group(7)),
-                "choice_4": clean_choice_text(match.group(8)),
-                "correct": {"A": 1, "B": 2, "C": 3, "D": 4}[match.group(3)],
-                "explanation": clean_text(match.group(9)),
+                "number": question_number,
+                "question": clean_text(match.group(1)),
+                "choice_1": clean_choice_text(match.group(4)),
+                "choice_2": clean_choice_text(match.group(5)),
+                "choice_3": clean_choice_text(match.group(6)),
+                "choice_4": clean_choice_text(match.group(7)),
+                "correct": {"A": 1, "B": 2, "C": 3, "D": 4}[match.group(2)],
+                "explanation": clean_text(match.group(8)),
             }
         )
     validate_sequence(2, rows)
@@ -163,7 +168,7 @@ def parse_chapter_two(block: str) -> list[dict[str, str | int]]:
 
 
 def split_standard_questions(block: str) -> list[tuple[int, str]]:
-    matches = list(re.finditer(r"(?m)^\s*(\d+)\.\s*", block))
+    matches = list(re.finditer(r"(?:(?<=^)|(?<=\n)|(?<=\f))\s*(\d+)\.\s*", block))
     question_blocks: list[tuple[int, str]] = []
     for index, match in enumerate(matches):
         start = match.start()
@@ -179,7 +184,7 @@ def parse_standard_question(question_number: int, block: str) -> dict[str, str |
     cleaned = re.sub(r"\nChapter\s+\d+[: ].*?\n", "\n", cleaned, flags=re.IGNORECASE)
 
     match = re.search(
-        rf"^\s*{question_number}\.\s*(.*?)\n\s*A\.\s*(.*?)\n\s*B\.\s*(.*?)\n\s*C\.\s*(.*?)\n\s*D\.\s*(.*?)\n\s*Answer:\s*([A-D])\.\s*(.*?)\n\s*Rationale:\s*(.*)$",
+        rf"^\s*{question_number}\.\s*(.*?)\n\s*A\.\s*(.*?)\n\s*B\.\s*(.*?)\n\s*C\.\s*(.*?)\n\s*D\.\s*(.*?)\n\s*(?:✅\s*)?Answer:\s*([A-D])\.\s*(.*?)\n\s*Rationale:\s*(.*)$",
         cleaned,
         flags=re.DOTALL,
     )
@@ -224,7 +229,7 @@ def build_csv_rows(text: str) -> tuple[list[list[str | int]], list[str]]:
 
     for chapter_number in sorted(all_parsed):
         title, parsed_rows = all_parsed[chapter_number]
-        topic = slugify(title)
+        topic = title
         for row in parsed_rows:
             rows.append(
                 [

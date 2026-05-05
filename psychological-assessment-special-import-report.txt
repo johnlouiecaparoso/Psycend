@@ -1,0 +1,8 @@
+Psychological Assessment special import report
+Total exported rows: 80
+
+Chapter 1: 19 questions | topic `special`
+Chapter 2: 21 questions | topic `special`
+Chapter 3: 40 questions | topic `special`
+Topic was replaced with `special` for all rows as requested.
+Validated no duplicate chapter/question pairs and no missing questions based on expected chapter counts.

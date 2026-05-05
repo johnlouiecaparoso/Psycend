@@ -1,24 +1,24 @@
 Developmental Psychology PDF import report
 Total exported rows: 740
 
-Chapter 1: 40 questions | topic `theory-and-research`
-Chapter 2: 40 questions | topic `theory-and-research`
-Chapter 3: 35 questions | topic `forming-a-new-life`
-Chapter 4: 35 questions | topic `birth-and-physical-development-during-the-first-three-years`
-Chapter 5: 35 questions | topic `cognitive-development-during-the-first-three-years`
-Chapter 6: 40 questions | topic `psychosocial-development-during-the-first-three-years`
-Chapter 7: 35 questions | topic `physical-and-cognitive-development-in-early-childhood`
-Chapter 8: 40 questions | topic `psychosocial-development-in-early-childhood`
-Chapter 9: 40 questions | topic `physical-and-cognitive-development-in-middle-childhood`
-Chapter 10: 40 questions | topic `psychosocial-development-in-middle-childhood`
-Chapter 11: 40 questions | topic `physical-and-cognitive-development-in-adolescence`
-Chapter 12: 40 questions | topic `psychosocial-development-in-adolescence`
-Chapter 13: 40 questions | topic `physical-and-cognitive-development-in-emerging-and-young-adulthood`
-Chapter 14: 40 questions | topic `psychosocial-development-in-emerging-and-young-adulthood`
-Chapter 15: 40 questions | topic `physical-and-cognitive-development-in-middle-adulthood`
-Chapter 16: 40 questions | topic `psychosocial-development-in-middle-adulthood`
-Chapter 17: 40 questions | topic `physical-and-cognitive-development-in-late-adulthood`
-Chapter 18: 40 questions | topic `psychosocial-development-in-late-adulthood`
-Chapter 19: 40 questions | topic `dealing-with-death-and-bereavement`
+Chapter 1: 40 questions | topic `Theory and Research`
+Chapter 2: 40 questions | topic `Theory and Research`
+Chapter 3: 35 questions | topic `Forming a New Life`
+Chapter 4: 35 questions | topic `Birth and Physical Development during the First Three Years`
+Chapter 5: 35 questions | topic `Cognitive Development during the First Three Years`
+Chapter 6: 40 questions | topic `Psychosocial Development during the First Three Years`
+Chapter 7: 35 questions | topic `Physical and Cognitive Development in Early Childhood`
+Chapter 8: 40 questions | topic `Psychosocial Development in Early Childhood`
+Chapter 9: 40 questions | topic `Physical and Cognitive Development in Middle Childhood`
+Chapter 10: 40 questions | topic `Psychosocial Development in Middle Childhood`
+Chapter 11: 40 questions | topic `Physical and Cognitive Development in Adolescence`
+Chapter 12: 40 questions | topic `Psychosocial Development in Adolescence`
+Chapter 13: 40 questions | topic `Physical and Cognitive Development in Emerging and Young Adulthood`
+Chapter 14: 40 questions | topic `Psychosocial Development in Emerging and Young Adulthood`
+Chapter 15: 40 questions | topic `Physical and Cognitive Development in Middle Adulthood`
+Chapter 16: 40 questions | topic `Psychosocial Development in Middle Adulthood`
+Chapter 17: 40 questions | topic `Physical and Cognitive Development in Late Adulthood`
+Chapter 18: 40 questions | topic `Psychosocial Development in Late Adulthood`
+Chapter 19: 40 questions | topic `Dealing with Death and Bereavement`
 Skipped trailing Chapter 20 marker because it contained no recoverable quiz content.
 Chapter 6 topic was normalized to `Psychosocial Development during the First Three Years` because the extracted heading was truncated.

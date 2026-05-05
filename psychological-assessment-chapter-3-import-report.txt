@@ -1,5 +1,0 @@
-Psychological Assessment Chapter 3 PDF import report
-Total exported rows: 40
-
-Chapter 3: 40 questions | topic `Chapter 3`
-Topic was kept equal to the chapter name because this continuation file does not use a separate subtopic.

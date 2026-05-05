@@ -13,6 +13,18 @@ import { buttonVariants } from "@/components/ui/button";
 
 type ResultData = AttemptResult | OfflineAttemptResult;
 
+function formatChoiceLabel(
+  choiceKey: "A" | "B" | "C" | "D" | null,
+  choices: ResultData["items"][number]["choices"]
+) {
+  if (!choiceKey) {
+    return "No answer";
+  }
+
+  const matchedChoice = choices.find((choice) => choice.choice_key === choiceKey);
+  return matchedChoice ? `${choiceKey}. ${matchedChoice.choice_text}` : choiceKey;
+}
+
 export function ResultsReport({
   result,
   title = "Exam results",
@@ -105,9 +117,9 @@ export function ResultsReport({
               <p className="font-semibold">{item.questionText}</p>
               <p className="mt-2 text-sm text-muted-foreground">Subject: {item.subject} | Topic: {item.topic}</p>
               <p className="mt-3 text-sm">
-                Your answer: <span className={item.isCorrect ? "font-semibold text-emerald-600" : "font-semibold text-rose-600"}>{item.selectedChoice ?? "No answer"}</span>
+                Your answer: <span className={item.isCorrect ? "font-semibold text-emerald-600" : "font-semibold text-rose-600"}>{formatChoiceLabel(item.selectedChoice, item.choices)}</span>
               </p>
-              <p className="mt-1 text-sm">Correct answer: <span className="font-semibold">{item.correctChoice}</span></p>
+              <p className="mt-1 text-sm">Correct answer: <span className="font-semibold">{formatChoiceLabel(item.correctChoice, item.choices)}</span></p>
               <p className="mt-3 text-sm text-muted-foreground">{item.explanation}</p>
             </div>
           ))}

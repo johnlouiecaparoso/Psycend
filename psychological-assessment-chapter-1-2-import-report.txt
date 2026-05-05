@@ -1,7 +1,0 @@
-Psychological Assessment Chapter 1-2 PDF import report
-Total exported rows: 40
-
-Chapter 1: 19 questions | topic `Chapter 1`
-Chapter 2: 21 questions | topic `Chapter 2`
-Topic was kept equal to the chapter name because the PDF does not provide a separate subtopic.
-Chapter split was inferred from content progression: questions 1-19 align with Chapter 1 assessment fundamentals, while questions 20-40 shift into Chapter 2 historical and legal-ethical content.

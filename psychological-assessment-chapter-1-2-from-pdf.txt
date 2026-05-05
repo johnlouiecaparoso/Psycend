@@ -1,693 +1,621 @@
-1. During a case conference, a psychometrician describes a client's "test results" as
-    a subset of the broader "assessment process." According to the semantic
-    distinction that emerged after World War II, what is the primary difference
-    between the two?
-
-    A. Testing is more inclusive and involves the integration of multiple data sources.
-
-    B. Assessment is the process of measuring variables to obtain a sample of
-    behavior.
-
-    C. Assessment is a problem-solving process that involves the gathering and
-    integration of psychology-related data.
-
-    D. Testing is always collaborative, while assessment is always conducted by a
-    single evaluator.
-
-2. A school psychologist is asked, "Can this child function in a regular classroom?"
-    This specific inquiry, which initiates the assessment process, is known as a:
-
-    A. Referral question
-
-    B. Clinical hypothesis
-
-    C. Evaluative mandate
-
-    D. Diagnostic criterion
-
-3. In a "collaborative psychological assessment," how are the assessor and the
-    assessee characterized?
-
-    A. Subject and observer
-
-    B. Expert and novice
-
-    C. Partners
-
-    D. Patient and clinician
-
-4. Which approach to assessment is characterized by an "evaluation > intervention
-    > evaluation" model and is often used in educational settings to measure the
-    interactive nature of learning?
-
-    A. Static assessment
-
-    B. Remote assessment
-    C. Dynamic assessment
-    D. Retrospective assessment
-5. A psychometrician uses a device to measure a specific sample of a student's
-    behavior to determine their math proficiency. This specific device or procedure is
-    defined as a:
-    A. Portfolio
-    B. Test
-    C. Behavioral observation
-    D. Case study
-6. Which tool of assessment involves a reciprocal exchange of information and
-    allows the assessor to note both verbal and nonverbal behaviors?
-    A. Psychological autopsy
-    B. Role-play test
-    C. Interview
-    D. Behavioral observation
-7. A job applicant submits a collection of their past architectural designs and
-    blueprints as part of the hiring process. In assessment terms, this collection is a:
-    A. Case history
-    B. Portfolio
-    C. Naturalistic observation
-    D. CAPA
-8. If a researcher observes children's play behavior in a public park without
-    intervening, what specific variety of assessment is being used?
-    A. Role-play testing
-    B. Naturalistic observation
-    C. Clinical observation
-    D. Remote assessment
-9. In the acronym CAPA, the word "assisted" refers to the assistance provided to
-
-    whom?
-    A. The testtaker
-    B. The test developer
-    C. The test user
-    D. The test publisher
-10. A computer program that tailors the difficulty of the next question based on the
-    testtaker's previous response is an example of:
-    A. Computer-Assisted Psychological Assessment (CAPA)
-    B. Computer Adaptive Testing (CAT)
-    C. Online Unregulated Testing
-    D. Automated Scoring System
-11. According to the Cohen text, who is the party responsible for the "technical
-    quality" and the "responsible development" of a test?
-    A. The test user
-    B. The testtaker
-    C. The test developer
-    D. The society at large
-12. A "psychological autopsy" is best described as:
-    A. A physical examination of a deceased person's brain.
-    B. A reconstruction of a deceased individual's psychological profile using archival
-    data.
-    C. A test administered to individuals who have attempted suicide.
-    D. A clinical interview conducted during a funeral.
-13. In clinical settings, what is the "hallmark" of testing compared to other settings?
-    A. It is always conducted in groups.
-    B. It is employed with only one individual at a time.
-    C. It only uses projective tests.
-    D. It is exclusively used for hiring decisions.
-
-14. A student is given a test to evaluate how much they have learned in their Algebra
-    class after a semester of instruction. This is an example of an:
-    A. Intelligence test
-    B. Achievement test
-    C. Aptitude test
-    D. Interest inventory
-
-15. What is the primary objective of assessment in "geriatric settings"?
-    A. To determine if the individual is fit for work.
-    B. To evaluate the quality of life and cognitive/adaptive functioning.
-    C. To screen for recruits during wartime.
-    D. To assign the individual to a specific grade level.
-
-16. A psychometrician ensures that the testing room is well-ventilated and free from
-    distractions like excessive noise or glaring sunlight. This responsibility falls under
-    which phase of assessment?
-    A. Test conceptualization
-    B. Before the test administration
-    C. During the test scoring
-    D. After the test interpretation
-
-17. Adaptation of a test or procedure to make it suitable for an assessee with
-    exceptional needs (e.g., a person with a visual impairment) is known as:
-    A. Alternate assessment
-    B. Standardized protocol
-    C. Accommodation
-    D. Role-play
-18. Which reference source is most likely to contain "highly critical reviews" of a test?
-    A. A publisher's test catalogue
-    B. A test manual
-    C. The Mental Measurements Yearbook
-    D. The test protocol
-19. Which organization is the world's largest private measurement institution and is
-    responsible for the GRE and SAT?
-    A. Buros Institute
-    B. Educational Testing Service (ETS)
-    C. American Psychological Association (APA)
-    D. Psychological Corporation
-20. Historical records indicate that civil service testing for government jobs first
-    emerged in which country?
-    A. Ancient Greece
-    B. United States
-    C. China
-    D. Germany
-21. Who is credited with kindling interest in research on "individual differences" and
-    pioneering the use of the "coefficient of correlation"?
-    A. Wilhelm Wundt
-    B. Francis Galton
-    C. Charles Darwin
-    D. Karl Pearson
-22. In contrast to Galton, Wilhelm Wundt focused his research on:
-    A. How people were different.
-    B. How people were similar.
-    C. The heritability of intelligence.
-    D. The development of the 16PF.
-23. Which student of Wundt coined the term "mental test" in 1890?
-    A. James McKeen Cattell
-    B. Lightner Witmer
-    C. Emil Kraepelin
-    D. Victor Henri
-24. Who is considered the "founder of clinical psychology" for establishing the first
-    psychological clinic in 1896?
-    A. Alfred Binet
-    B. Robert Woodworth
-    C. Lightner Witmer
-    D. Sigmund Freud
-25. The "Woodworth Psychoneurotic Inventory" is significant in history because it
-    was:
-    A. The first intelligence test for children.
-    B. The first widely used self-report personality test.
-    C. A disguised test for military strategy.
-    D. A measure of sensory-motor skills.
-26. During WWI, the US Military used "Army Beta" specifically for:
-    A. Literate recruits
-    B. Illiterate recruits
-    C. Officers only
-    D. Recruits with physical disabilities
-
-27. A test that can be adequately administered and interpreted using only the manual
-    and a general orientation is classified as:
-    A. Level A
-    B. Level B
-    C. Level C
-    D. Level D
-
-28. Under the Code of Ethics and RA 10029, which of the following is a "Level B"
-    requirement for a test user?
-    A. A doctorate in psychology.
-    B. Technical knowledge of test construction and supporting psychological
-    studies.
-    C. No formal training required other than reading the manual.
-    D. Only a licensed physician can administer it.
-
-29. "Informed Consent" for psychological testing should generally specify all the
-    following EXCEPT:
-    A. The general purpose of the testing.
-    B. The specific reason it is being undertaken.
-    C. The exact correct answers to the test items.
-    D. The general type of instruments to be administered.
-
-30. Which term refers to a "legal and ethical duty" to keep client communications
-    private, specifically protecting clients from disclosure in "judicial proceedings"?
-    A. Confidentiality
-    B. Privilege
-    C. Professionalism
-    D. Discretion
-31. If a psychometrician is ordered by a court to disclose confidential test records,
-    and the client has not waived their privilege, what is the general ethical priority?
-    A. Always refuse, even if it leads to jail.
-    B. Disclose immediately to avoid legal trouble.
-    C. Inform the court of the ethical duty to maintain confidentiality and only disclose
-    if legally mandated.
-    D. Delete the records so they cannot be subpoenaed.
-32. In the Philippines, the "Psychology Act of 2009" is also known as:
-    A. RA 9258
-    B. RA 10029
-    C. RA 7160
-    D. RA 10173
-33. Which ethical principle dictates that psychologists use "deception" in research
-    only when absolutely necessary and requires a full debriefing afterward?
-    A. Right to privacy
-    B. Right to be informed of results
-    C. Ethical use of deception
-    D. Minimal stress principle
-34. A test that yields a numerical score representing an "approximation" of a trait
-    because it uses a continuous scale (where a score of 0 does not mean the total
-    absence of the trait) is most likely an:
-    A. Nominal scale
-    B. Ordinal scale
-    C. Interval scale
-    D. Ratio scale
-35. "A distinguishable, relatively enduring way in which one individual varies from
-    another" is the definition of a:
-    A. State
-    B. Trait
-    C. Type
-    D. Construct
-36. According to the Cohen text, a "construct" is:
-    A. An observable physical organ.
-    B. An informed, scientific concept developed to describe or explain behavior.
-    C. A raw score that has not been converted.
-    D. A test that lacks reliability.
-37. A "Good Test" must primarily be "psychometrically sound," which refers to:
-    A. Being inexpensive and quick to score.
-    B. Having clear instructions for the testtaker.
-    C. Reliability and validity.
-    D. Being available in multiple languages.
-38. "Error variance" in testing refers to:
-    A. The mistakes made by the test developer.
-    B. The component of a test score attributable to sources other than the trait being
-    measured.
-    C. The total score achieved by the testtaker.
-         D. The percentage of items the testtaker got wrong.
-
-    39. If a psychometrician is assessing a client from a different cultural background
-         and chooses a "culture-specific" test, they are attempting to:
-
-         A. Isolate the cultural variable to ensure fairness.
-
-         B. Discriminate against the client.
-
-         C. Increase the difficulty of the test.
-
-         D. Skip the informed consent process.
-
-    40. Which of the following is NOT a right of a testtaker according to ethical
-         standards?
-
-         A. The right to be informed of test findings.
-
-         B. The right to the least distressing items.
-
-         C. The right to keep the test protocol (the actual test booklet) after the exam.
-
-         D. The right to informed consent.
-
-PART 2: ANSWER KEY
-
-    1. C
-    2. A
-    3. C
-    4. C
-    5. B
-    6. C
-    7. B
-    8. B
-    9. C
-    10. B
-    11. C
-    12. B
-    13. B
-    14. B
-    15. B
-    16. B
-    17. C
-    18. C
-    19. B
-    20. C
-    21. B
-    22. B
-    23. A
-    24. C
-    25. B
-    26. B
-    27. A
-    28. B
-    29. C
-    30. B
-    31. C
-    32. B
-    33. C
-    34. C
-    35. B
-    36. B
-    37. C
-    38. B
-    39. A
-    40. C
-
-PART 3: RATIONALE
-
-1. Correct Answer: C
-
-    · Rationale: Psychological assessment is defined as the gathering and integration
-         of data for evaluation. Testing is the more limited process of measuring variables
-         to get a sample of behavior.
-
-    · Incorrect Choices: A and B swap the definitions. D is incorrect because both
-         can be collaborative or individual.
-
-    · High-Yield Concept: Assessment = Problem-solving/Integration; Testing =
-         Measurement/Behavior Sample.
-
-2. Correct Answer: A
-
-    · Rationale: The process begins with a referral for assessment from a source like
-         a teacher or judge, often involving a specific "referral question".
-
-    · Incorrect Choices: B, C, and D are not the standard terms used for the initial
-         inquiry.
-
-    · High-Yield Concept: The Referral Question guides the selection of assessment
-         tools.
-
-3. Correct Answer: C
-    · Rationale: In collaborative psychological assessment, the assessor and
-         assessee work as "partners".
-
-    · Incorrect Choices: A, B, and D imply a more hierarchical or distant relationship
-         found in traditional models.
-
-    · High-Yield Concept: Collaboration = Partnership.
-
-4. Correct Answer: C
-
-    · Rationale: Dynamic assessment follows an "evaluation > intervention >
-         evaluation" model and focuses on the interactive nature of the process.
-
-    · Incorrect Choices: A is the opposite; B and D refer to physical distance or time-
-         frames.
-
-    · High-Yield Concept: Dynamic = Interactive/Change-oriented.
-
-5. Correct Answer: B
-
-    · Rationale: A test is a measuring device or procedure designed to obtain a
-         sample of behavior.
-
-    · Incorrect Choices: A, C, and D are specific types of assessment tools, but "test"
-         is the general term for the measuring device itself.
-
-    · High-Yield Concept: Test = Measuring device/Sample of behavior.
-
-6. Correct Answer: C
-
-    · Rationale: An interview is a method of gathering information through direct
-         communication involving reciprocal exchange, where verbal and nonverbal
-         behaviors are noted.
-
-    · Incorrect Choices: A is retrospective; B is simulated; D is purely observation-
-         based without necessarily a reciprocal exchange.
-
-    · High-Yield Concept: Interview = Reciprocal exchange.
-
-7. Correct Answer: B
-
-    · Rationale: A portfolio is a collection of work products used as samples of ability
-         and accomplishment.
-
-    · Incorrect Choices: A involves archival records/transcripts; C is about observing
-         behavior; D is computer-assisted assessment.
-
-    · High-Yield Concept: Portfolio = Work products as samples of ability.
-
-8. Correct Answer: B
-
-    · Rationale: Naturalistic observation occurs when behavior is monitored in the
-         setting where it would typically occur.
-
-    · Incorrect Choices: A is a simulation; C is general; D refers to proximity.
-    · High-Yield Concept: Naturalistic = Natural setting.
-9. Correct Answer: C
-
-    · Rationale: In CAPA (Computer-Assisted Psychological Assessment), "assisted"
-         refers to the help provided to the test user (the professional).
-
-    · Incorrect Choices: It does not primarily refer to assistance for the testtaker or
-         developer.
-
-    · High-Yield Concept: CAPA assists the User.
-
-10. Correct Answer: B
-
-    · Rationale: Computer Adaptive Testing (CAT) tailors the test to the testtaker's
-         ability or pattern.
-
-    · Incorrect Choices: A is a broader term; C and D are not the specific technical
-         terms for tailored testing.
-
-    · High-Yield Concept: CAT = Tailored/Adaptive.
-
-11. Correct Answer: C
-
-    · Rationale: Test developers and publishers are responsible for creating tests and
-         ensuring their technical quality and ethical development.
-
-    · Incorrect Choices: Users select and use tests; testtakers take them.
-    · High-Yield Concept: Developer = Creator/Quality controller.
-
-12. Correct Answer: B
-
-    · Rationale: A psychological autopsy is a reconstruction of a deceased person's
-         profile based on archival records and interviews.
-
-    · Incorrect Choices: A is a physical autopsy; C and D misinterpret the clinical
-         application.
-
-    · High-Yield Concept: Psychological Autopsy = Deceased profile reconstruction.
-
-13. Correct Answer: B
-
-    · Rationale: The hallmark of clinical testing is that it is typically employed with only
-         one individual at a time.
-
-    · Incorrect Choices: Group tests are common in school/military; projective tests
-         are just one type.
-
-    · High-Yield Concept: Clinical = One-on-one focus.
-
-14. Correct Answer: B
-
-    · Rationale: Achievement tests evaluate accomplishment or the degree of
-         learning that has taken place.
-
-    · Incorrect Choices: A measures capacity; C measures potential; D measures
-         preferences.
-
-    · High-Yield Concept: Achievement = Past learning/Accomplishment.
-15. Correct Answer: B
-
-    · Rationale: In geriatric settings, assessment evaluates cognitive/adaptive
-         functioning to ensure quality of life.
-
-    · Incorrect Choices: A, C, and D are objectives for industrial, military, and
-         educational settings.
-
-    · High-Yield Concept: Geriatric Assessment = Quality of life/Aging.
-
-16. Correct Answer: B
-
-    · Rationale: Ensuring the environment is suitable is a responsibility test users
-         have "before" the test is administered.
-
-    · Incorrect Choices: A is for developers; C and D happen after administration.
-    · High-Yield Concept: Environment prep = Pre-administration duty.
-
-17. Correct Answer: C
-
-    · Rationale: Accommodation is the adaptation of a test or procedure to make it
-         suitable for an assessee with exceptional needs.
-
-    · Incorrect Choices: A is a procedure that varies from the standard way entirely;
-         B is the standard; D is a tool.
-
-    · High-Yield Concept: Accommodation = Adaptation for special needs.
-
-18. Correct Answer: C
-
-    · Rationale: The Mental Measurements Yearbook (Buros) provides authoritative,
-         independent, and often critical reviews of tests.
-
-    · Incorrect Choices: A and B are produced by publishers who want to sell the test
-         and thus avoid criticism.
-
-    · High-Yield Concept: Buros/MMY = Critical/Independent reviews.
-
-19. Correct Answer: B
-
-    · Rationale: Educational Testing Service (ETS) is the world's largest private
-         measurement institution.
-
-    · Incorrect Choices: A is a reference center; C is a professional org; D was
-         founded by Cattell but is not the "largest private" one mentioned in this context.
-
-    · High-Yield Concept: ETS = GRE/SAT.
-
-20. Correct Answer: C
-
-    · Rationale: China is believed to have started civil service testing as early as 2200
-         b.c.e..
-
-    · Incorrect Choices: Other regions developed testing much later.
-    · High-Yield Concept: China = Origin of Civil Service Testing.
-21. Correct Answer: B
-
-    · Rationale: Francis Galton focused on individual differences and pioneered the
-         concept of the coefficient of correlation.
-
-    · Incorrect Choices: A focused on similarities; C was Galton's cousin whose work
-         inspired him; D developed the specific product-moment technique but Galton
-         pioneered the root concept.
-
-    · High-Yield Concept: Galton = Individual Differences/Correlation root.
-
-22. Correct Answer: B
-
-    · Rationale: Unlike Galton, Wundt focused on how people were similar, viewing
-         individual differences as error.
-
-    · Incorrect Choices: A describes Galton; C and D describe later developments.
-    · High-Yield Concept: Wundt = Similarities/General descriptions.
-
-23. Correct Answer: A
-
-    · Rationale: James McKeen Cattell coined the term "mental test" in an 1890
-         publication.
-
-    · Incorrect Choices: B, C, and D were other students of Wundt but did not coin
-         this term.
-
-    · High-Yield Concept: J.M. Cattell = Mental Test.
-
-24. Correct Answer: C
-
-    · Rationale: Lightner Witmer is cited as the founder of clinical psychology for
-         establishing the first psychological clinic.
-
-    · Incorrect Choices: B is for personality tests; A is for intelligence tests.
-    · High-Yield Concept: Witmer = First Clinic/Clinical Psych Founder.
-
-25. Correct Answer: B
-
-    · Rationale: The Woodworth Psychoneurotic Inventory was the first widely used
-         self-report test of personality.
-
-    · Incorrect Choices: It was not for children or sensory-motor skills; it was a
-         psychiatric interview in paper form.
-
-    · High-Yield Concept: Woodworth = First Self-Report Personality Test.
-
-26. Correct Answer: B
-
-    · Rationale: Army Beta was developed for illiterate recruits during WWI.
-    · Incorrect Choices: Army Alpha was for literate recruits.
-    · High-Yield Concept: Army Beta = Illiterate/Non-English.
-
-27. Correct Answer: A
-    · Rationale: Level A tests can be administered and interpreted with the aid of the
-         manual and a general orientation.
-
-    · Incorrect Choices: Level B and C require higher technical knowledge or
-         advanced degrees.
-
-    · High-Yield Concept: Level A = Manual + General orientation.
-
-28. Correct Answer: B
-
-    · Rationale: Level B tests require technical knowledge of test construction, use,
-         and supporting psychological studies.
-
-    · Incorrect Choices: A refers to Level C; C refers to Level A.
-    · High-Yield Concept: Level B = Technical/Psychometric knowledge.
-
-29. Correct Answer: C
-
-    · Rationale: Consent should include the purpose, reasons, and type of
-         instruments, but never the correct answers, as this compromises test security.
-
-    · Incorrect Choices: A, B, and D are the three standard requirements for
-         informed consent.
-
-    · High-Yield Concept: Informed Consent covers "Why" and "What," but not "How
-         to pass."
-
-30. Correct Answer: B
-
-    · Rationale: Privilege protects clients from disclosure in "judicial proceedings" and
-         belongs to the client.
-
-    · Incorrect Choices: A refers to communication outside the courtroom.
-    · High-Yield Concept: Privilege = Legal/Court protection; Confidentiality =
-
-         Professional/Private protection.
-
-31. Correct Answer: C
-
-    · Rationale: Psychologists have an ethical duty to keep communications
-         confidential but must recognize that privilege is not absolute and court orders can
-         mandate disclosure.
-
-    · Incorrect Choices: A is too extreme; B ignores the initial ethical duty; D is illegal
-         (destruction of evidence).
-
-    · High-Yield Concept: Ethics + Law = Informed resistance followed by
-         compliance if legally ordered.
-
-32. Correct Answer: B
-
-    · Rationale: The Psychology Act of 2009 in the Philippines is RA 10029.
-    · Incorrect Choices: A is Guidance and Counseling; D is Data Privacy.
-    · High-Yield Concept: RA 10029 = Philippine Psychology Law.
-33. Correct Answer: C
-
-    · Rationale: Ethical guidelines state that deception is only used if necessary and
-         requires full debriefing afterward.
-
-    · Incorrect Choices: A and B are related but different rights.
-    · High-Yield Concept: Deception = Necessity + Debriefing.
-
-34. Correct Answer: C
-
-    · Rationale: Interval scales (like IQ) have no absolute zero, so a score is an
-         approximation and 0 doesn't mean "no intelligence".
-
-    · Incorrect Choices: D has a true zero; A and B are simpler rankings/categories.
-    · High-Yield Concept: Interval Scale = No absolute zero/Equal intervals.
-
-35. Correct Answer: B
-
-    · Rationale: A trait is defined as a distinguishable, relatively enduring way in which
-         individuals vary.
-
-    · Incorrect Choices: A is less enduring; C is a category; D is the theoretical
-         concept itself.
-
-    · High-Yield Concept: Trait = Relatively enduring variation.
-
-36. Correct Answer: B
-
-    · Rationale: A construct is an informed, scientific concept developed to describe
-         or explain behavior.
-
-    · Incorrect Choices: A is physical; C is a raw score; D is a quality issue.
-    · High-Yield Concept: Construct = Unobservable scientific concept.
-
-37. Correct Answer: C
-
-    · Rationale: Psychometric soundness refers to the key aspects of reliability and
-         validity.
-
-    · Incorrect Choices: A and B are practical considerations but not "psychometric"
-         ones.
-
-    · High-Yield Concept: Psychometric Soundness = Reliability + Validity.
-
-38. Correct Answer: B
-
-    · Rationale: Error refers to all factors on a test score beyond those specifically
-         measured by the test.
-
-    · Incorrect Choices: A and D are specific types of errors or outcomes, not the
-         general definition of error variance.
-
-    · High-Yield Concept: Error Variance = Influence of irrelevant variables.
-
-39. Correct Answer: A
-    · Rationale: Early developers used culture-specific tests to "isolate" the cultural
-         variable in mental ability tests.
-
-    · Incorrect Choices: B, C, and D are unethical or incorrect reasons.
-    · High-Yield Concept: Culture-Specific = Isolating culture for fairness.
-
-40. Correct Answer: C
-
-    · Rationale: Testtakers have the right to findings and consent, but not to keep the
-         test protocols (booklets/manuals), as this violates test security.
-
-    · Incorrect Choices: A, B, and D are established rights in the Cohen text.
-    · High-Yield Concept: Test Security > Testtaker's right to the physical booklet.
-
+1. During a case conference, a psychometrician describes a client's "test results" as 
+a subset of the broader "assessment process." According to the semantic 
+distinction that emerged after World War II, what is the primary difference 
+between the two? 
+A. Testing is more inclusive and involves the integration of multiple data sources. 
+B. Assessment is the process of measuring variables to obtain a sample of 
+behavior. 
+C. Assessment is a problem-solving process that involves the gathering and 
+integration of psychology-related data. 
+D. Testing is always collaborative, while assessment is always conducted by a 
+single evaluator. 
+2. A school psychologist is asked, "Can this child function in a regular classroom?" 
+This specific inquiry, which initiates the assessment process, is known as a: 
+A. Referral question 
+B. Clinical hypothesis 
+C. Evaluative mandate 
+D. Diagnostic criterion 
+3. In a "collaborative psychological assessment," how are the assessor and the 
+assessee characterized? 
+A. Subject and observer 
+B. Expert and novice 
+C. Partners 
+D. Patient and clinician 
+4. Which approach to assessment is characterized by an "evaluation > intervention 
+> evaluation" model and is often used in educational settings to measure the 
+interactive nature of learning? 
+A. Static assessment 
+B. Remote assessmentC. Dynamic assessment 
+D. Retrospective assessment 
+5. A psychometrician uses a device to measure a specific sample of a studentâ€™s 
+behavior to determine their math proficiency. This specific device or procedure is 
+defined as a: 
+A. Portfolio 
+B. Test 
+C. Behavioral observation 
+D. Case study 
+6. Which tool of assessment involves a reciprocal exchange of information and 
+allows the assessor to note both verbal and nonverbal behaviors? 
+A. Psychological autopsy 
+B. Role-play test 
+C. Interview 
+D. Behavioral observation 
+7. A job applicant submits a collection of their past architectural designs and 
+blueprints as part of the hiring process. In assessment terms, this collection is a: 
+A. Case history 
+B. Portfolio 
+C. Naturalistic observation 
+D. CAPA 
+8. If a researcher observes childrenâ€™s play behavior in a public park without 
+intervening, what specific variety of assessment is being used? 
+A. Role-play testing 
+B. Naturalistic observation 
+C. Clinical observationD. Remote assessment 
+9. In the acronym CAPA, the word "assisted" refers to the assistance provided to 
+whom? 
+A. The testtaker 
+B. The test developer 
+C. The test user 
+D. The test publisher 
+10. A computer program that tailors the difficulty of the next question based on the 
+testtaker's previous response is an example of: 
+A. Computer-Assisted Psychological Assessment (CAPA) 
+B. Computer Adaptive Testing (CAT) 
+C. Online Unregulated Testing 
+D. Automated Scoring System 
+11. According to the Cohen text, who is the party responsible for the "technical 
+quality" and the "responsible development" of a test? 
+A. The test user 
+B. The testtaker 
+C. The test developer 
+D. The society at large 
+12. A "psychological autopsy" is best described as: 
+A. A physical examination of a deceased person's brain. 
+B. A reconstruction of a deceased individual's psychological profile using archival 
+data. 
+C. A test administered to individuals who have attempted suicide. 
+D. A clinical interview conducted during a funeral.13. In clinical settings, what is the "hallmark" of testing compared to other settings? 
+A. It is always conducted in groups. 
+B. It is employed with only one individual at a time. 
+C. It only uses projective tests. 
+D. It is exclusively used for hiring decisions. 
+14. A student is given a test to evaluate how much they have learned in their Algebra 
+class after a semester of instruction. This is an example of an: 
+A. Intelligence test 
+B. Achievement test 
+C. Aptitude test 
+D. Interest inventory 
+15. What is the primary objective of assessment in "geriatric settings"? 
+A. To determine if the individual is fit for work. 
+B. To evaluate the quality of life and cognitive/adaptive functioning. 
+C. To screen for recruits during wartime. 
+D. To assign the individual to a specific grade level. 
+16. A psychometrician ensures that the testing room is well-ventilated and free from 
+distractions like excessive noise or glaring sunlight. This responsibility falls under 
+which phase of assessment? 
+A. Test conceptualization 
+B. Before the test administration 
+C. During the test scoring 
+D. After the test interpretation 
+17. Adaptation of a test or procedure to make it suitable for an assessee with 
+exceptional needs (e.g., a person with a visual impairment) is known as:A. Alternate assessment 
+B. Standardized protocol 
+C. Accommodation 
+D. Role-play 
+18. Which reference source is most likely to contain "highly critical reviews" of a test? 
+A. A publisher's test catalogue 
+B. A test manual 
+C. The Mental Measurements Yearbook 
+D. The test protocol 
+19. Which organization is the world's largest private measurement institution and is 
+responsible for the GRE and SAT? 
+A. Buros Institute 
+B. Educational Testing Service (ETS) 
+C. American Psychological Association (APA) 
+D. Psychological Corporation 
+20. Historical records indicate that civil service testing for government jobs first 
+emerged in which country? 
+A. Ancient Greece 
+B. United States 
+C. China 
+D. Germany 
+21. Who is credited with kindling interest in research on "individual differences" and 
+pioneering the use of the "coefficient of correlation"? 
+A. Wilhelm Wundt 
+B. Francis GaltonC. Charles Darwin 
+D. Karl Pearson 
+22. In contrast to Galton, Wilhelm Wundt focused his research on: 
+A. How people were different. 
+B. How people were similar. 
+C. The heritability of intelligence. 
+D. The development of the 16PF. 
+23. Which student of Wundt coined the term "mental test" in 1890? 
+A. James McKeen Cattell 
+B. Lightner Witmer 
+C. Emil Kraepelin 
+D. Victor Henri 
+24. Who is considered the "founder of clinical psychology" for establishing the first 
+psychological clinic in 1896? 
+A. Alfred Binet 
+B. Robert Woodworth 
+C. Lightner Witmer 
+D. Sigmund Freud 
+25. The "Woodworth Psychoneurotic Inventory" is significant in history because it 
+was: 
+A. The first intelligence test for children. 
+B. The first widely used self-report personality test. 
+C. A disguised test for military strategy. 
+D. A measure of sensory-motor skills.26. During WWI, the US Military used "Army Beta" specifically for: 
+A. Literate recruits 
+B. Illiterate recruits 
+C. Officers only 
+D. Recruits with physical disabilities 
+27. A test that can be adequately administered and interpreted using only the manual 
+and a general orientation is classified as: 
+A. Level A 
+B. Level B 
+C. Level C 
+D. Level D 
+28. Under the Code of Ethics and RA 10029, which of the following is a "Level B" 
+requirement for a test user? 
+A. A doctorate in psychology. 
+B. Technical knowledge of test construction and supporting psychological 
+studies. 
+C. No formal training required other than reading the manual. 
+D. Only a licensed physician can administer it. 
+29. "Informed Consent" for psychological testing should generally specify all the 
+following EXCEPT: 
+A. The general purpose of the testing. 
+B. The specific reason it is being undertaken. 
+C. The exact correct answers to the test items. 
+D. The general type of instruments to be administered. 
+30. Which term refers to a "legal and ethical duty" to keep client communications 
+private, specifically protecting clients from disclosure in "judicial proceedings"?A. Confidentiality 
+B. Privilege 
+C. Professionalism 
+D. Discretion 
+31. If a psychometrician is ordered by a court to disclose confidential test records, 
+and the client has not waived their privilege, what is the general ethical priority? 
+A. Always refuse, even if it leads to jail. 
+B. Disclose immediately to avoid legal trouble. 
+C. Inform the court of the ethical duty to maintain confidentiality and only disclose 
+if legally mandated. 
+D. Delete the records so they cannot be subpoenaed. 
+32. In the Philippines, the "Psychology Act of 2009" is also known as: 
+A. RA 9258 
+B. RA 10029 
+C. RA 7160 
+D. RA 10173 
+33. Which ethical principle dictates that psychologists use "deception" in research 
+only when absolutely necessary and requires a full debriefing afterward? 
+A. Right to privacy 
+B. Right to be informed of results 
+C. Ethical use of deception 
+D. Minimal stress principle 
+34. A test that yields a numerical score representing an "approximation" of a trait 
+because it uses a continuous scale (where a score of 0 does not mean the total 
+absence of the trait) is most likely an: 
+A. Nominal scaleB. Ordinal scale 
+C. Interval scale 
+D. Ratio scale 
+35. "A distinguishable, relatively enduring way in which one individual varies from 
+another" is the definition of a: 
+A. State 
+B. Trait 
+C. Type 
+D. Construct 
+36. According to the Cohen text, a "construct" is: 
+A. An observable physical organ. 
+B. An informed, scientific concept developed to describe or explain behavior. 
+C. A raw score that has not been converted. 
+D. A test that lacks reliability. 
+37. A "Good Test" must primarily be "psychometrically sound," which refers to: 
+A. Being inexpensive and quick to score. 
+B. Having clear instructions for the testtaker. 
+C. Reliability and validity. 
+D. Being available in multiple languages. 
+38. "Error variance" in testing refers to: 
+A. The mistakes made by the test developer. 
+B. The component of a test score attributable to sources other than the trait being 
+measured. 
+C. The total score achieved by the testtaker.D. The percentage of items the testtaker got wrong. 
+39. If a psychometrician is assessing a client from a different cultural background 
+and chooses a "culture-specific" test, they are attempting to: 
+A. Isolate the cultural variable to ensure fairness. 
+B. Discriminate against the client. 
+C. Increase the difficulty of the test. 
+D. Skip the informed consent process. 
+40. Which of the following is NOT a right of a testtaker according to ethical 
+standards? 
+A. The right to be informed of test findings. 
+B. The right to the least distressing items. 
+C. The right to keep the test protocol (the actual test booklet) after the exam. 
+D. The right to informed consent. 
+ 
+PART 2: ANSWER KEY 
+1. C 
+2. A 
+3. C 
+4. C 
+5. B 
+6. C 
+7. B 
+8. B 
+9. C 
+10. B 
+11. C 
+12. B 
+13. B 
+14. B 
+15. B 
+16. B 
+17. C 
+18. C 
+19. B20. C 
+21. B 
+22. B 
+23. A 
+24. C 
+25. B 
+26. B 
+27. A 
+28. B 
+29. C 
+30. B 
+31. C 
+32. B 
+33. C 
+34. C 
+35. B 
+36. B 
+37. C 
+38. B 
+39. A 
+40. C 
+ 
+PART 3: RATIONALE 
+1. Correct Answer: C 
+â€¢ 
+Rationale: Psychological assessment is defined as the gathering and integration 
+of data for evaluation. Testing is the more limited process of measuring variables 
+to get a sample of behavior. 
+â€¢ 
+Incorrect Choices: A and B swap the definitions. D is incorrect because both 
+can be collaborative or individual. 
+â€¢ 
+High-Yield Concept: Assessment = Problem-solving/Integration; Testing = 
+Measurement/Behavior Sample. 
+2. Correct Answer: A 
+â€¢ 
+Rationale: The process begins with a referral for assessment from a source like 
+a teacher or judge, often involving a specific "referral question". 
+â€¢ 
+Incorrect Choices: B, C, and D are not the standard terms used for the initial 
+inquiry. 
+â€¢ 
+High-Yield Concept: The Referral Question guides the selection of assessment 
+tools. 
+3. Correct Answer: Câ€¢ 
+Rationale: In collaborative psychological assessment, the assessor and 
+assessee work as "partners". 
+â€¢ 
+Incorrect Choices: A, B, and D imply a more hierarchical or distant relationship 
+found in traditional models. 
+â€¢ 
+High-Yield Concept: Collaboration = Partnership. 
+4. Correct Answer: C 
+â€¢ 
+Rationale: Dynamic assessment follows an "evaluation > intervention > 
+evaluation" model and focuses on the interactive nature of the process. 
+â€¢ 
+Incorrect Choices: A is the opposite; B and D refer to physical distance or time-
+frames. 
+â€¢ 
+High-Yield Concept: Dynamic = Interactive/Change-oriented. 
+5. Correct Answer: B 
+â€¢ 
+Rationale: A test is a measuring device or procedure designed to obtain a 
+sample of behavior. 
+â€¢ 
+Incorrect Choices: A, C, and D are specific types of assessment tools, but "test" 
+is the general term for the measuring device itself. 
+â€¢ 
+High-Yield Concept: Test = Measuring device/Sample of behavior. 
+6. Correct Answer: C 
+â€¢ 
+Rationale: An interview is a method of gathering information through direct 
+communication involving reciprocal exchange, where verbal and nonverbal 
+behaviors are noted. 
+â€¢ 
+Incorrect Choices: A is retrospective; B is simulated; D is purely observation-
+based without necessarily a reciprocal exchange. 
+â€¢ 
+High-Yield Concept: Interview = Reciprocal exchange. 
+7. Correct Answer: B 
+â€¢ 
+Rationale: A portfolio is a collection of work products used as samples of ability 
+and accomplishment. 
+â€¢ 
+Incorrect Choices: A involves archival records/transcripts; C is about observing 
+behavior; D is computer-assisted assessment. 
+â€¢ 
+High-Yield Concept: Portfolio = Work products as samples of ability. 
+8. Correct Answer: B 
+â€¢ 
+Rationale: Naturalistic observation occurs when behavior is monitored in the 
+setting where it would typically occur. 
+â€¢ 
+Incorrect Choices: A is a simulation; C is general; D refers to proximity. 
+â€¢ 
+High-Yield Concept: Naturalistic = Natural setting.9. Correct Answer: C 
+â€¢ 
+Rationale: In CAPA (Computer-Assisted Psychological Assessment), "assisted" 
+refers to the help provided to the test user (the professional). 
+â€¢ 
+Incorrect Choices: It does not primarily refer to assistance for the testtaker or 
+developer. 
+â€¢ 
+High-Yield Concept: CAPA assists the User. 
+10. Correct Answer: B 
+â€¢ 
+Rationale: Computer Adaptive Testing (CAT) tailors the test to the testtaker's 
+ability or pattern. 
+â€¢ 
+Incorrect Choices: A is a broader term; C and D are not the specific technical 
+terms for tailored testing. 
+â€¢ 
+High-Yield Concept: CAT = Tailored/Adaptive. 
+11. Correct Answer: C 
+â€¢ 
+Rationale: Test developers and publishers are responsible for creating tests and 
+ensuring their technical quality and ethical development. 
+â€¢ 
+Incorrect Choices: Users select and use tests; testtakers take them. 
+â€¢ 
+High-Yield Concept: Developer = Creator/Quality controller. 
+12. Correct Answer: B 
+â€¢ 
+Rationale: A psychological autopsy is a reconstruction of a deceased person's 
+profile based on archival records and interviews. 
+â€¢ 
+Incorrect Choices: A is a physical autopsy; C and D misinterpret the clinical 
+application. 
+â€¢ 
+High-Yield Concept: Psychological Autopsy = Deceased profile reconstruction. 
+13. Correct Answer: B 
+â€¢ 
+Rationale: The hallmark of clinical testing is that it is typically employed with only 
+one individual at a time. 
+â€¢ 
+Incorrect Choices: Group tests are common in school/military; projective tests 
+are just one type. 
+â€¢ 
+High-Yield Concept: Clinical = One-on-one focus. 
+14. Correct Answer: B 
+â€¢ 
+Rationale: Achievement tests evaluate accomplishment or the degree of 
+learning that has taken place. 
+â€¢ 
+Incorrect Choices: A measures capacity; C measures potential; D measures 
+preferences. 
+â€¢ 
+High-Yield Concept: Achievement = Past learning/Accomplishment.15. Correct Answer: B 
+â€¢ 
+Rationale: In geriatric settings, assessment evaluates cognitive/adaptive 
+functioning to ensure quality of life. 
+â€¢ 
+Incorrect Choices: A, C, and D are objectives for industrial, military, and 
+educational settings. 
+â€¢ 
+High-Yield Concept: Geriatric Assessment = Quality of life/Aging. 
+16. Correct Answer: B 
+â€¢ 
+Rationale: Ensuring the environment is suitable is a responsibility test users 
+have "before" the test is administered. 
+â€¢ 
+Incorrect Choices: A is for developers; C and D happen after administration. 
+â€¢ 
+High-Yield Concept: Environment prep = Pre-administration duty. 
+17. Correct Answer: C 
+â€¢ 
+Rationale: Accommodation is the adaptation of a test or procedure to make it 
+suitable for an assessee with exceptional needs. 
+â€¢ 
+Incorrect Choices: A is a procedure that varies from the standard way entirely; 
+B is the standard; D is a tool. 
+â€¢ 
+High-Yield Concept: Accommodation = Adaptation for special needs. 
+18. Correct Answer: C 
+â€¢ 
+Rationale: The Mental Measurements Yearbook (Buros) provides authoritative, 
+independent, and often critical reviews of tests. 
+â€¢ 
+Incorrect Choices: A and B are produced by publishers who want to sell the test 
+and thus avoid criticism. 
+â€¢ 
+High-Yield Concept: Buros/MMY = Critical/Independent reviews. 
+19. Correct Answer: B 
+â€¢ 
+Rationale: Educational Testing Service (ETS) is the world's largest private 
+measurement institution. 
+â€¢ 
+Incorrect Choices: A is a reference center; C is a professional org; D was 
+founded by Cattell but is not the "largest private" one mentioned in this context. 
+â€¢ 
+High-Yield Concept: ETS = GRE/SAT. 
+20. Correct Answer: C 
+â€¢ 
+Rationale: China is believed to have started civil service testing as early as 2200 
+b.c.e.. 
+â€¢ 
+Incorrect Choices: Other regions developed testing much later. 
+â€¢ 
+High-Yield Concept: China = Origin of Civil Service Testing.21. Correct Answer: B 
+â€¢ 
+Rationale: Francis Galton focused on individual differences and pioneered the 
+concept of the coefficient of correlation. 
+â€¢ 
+Incorrect Choices: A focused on similarities; C was Galton's cousin whose work 
+inspired him; D developed the specific product-moment technique but Galton 
+pioneered the root concept. 
+â€¢ 
+High-Yield Concept: Galton = Individual Differences/Correlation root. 
+22. Correct Answer: B 
+â€¢ 
+Rationale: Unlike Galton, Wundt focused on how people were similar, viewing 
+individual differences as error. 
+â€¢ 
+Incorrect Choices: A describes Galton; C and D describe later developments. 
+â€¢ 
+High-Yield Concept: Wundt = Similarities/General descriptions. 
+23. Correct Answer: A 
+â€¢ 
+Rationale: James McKeen Cattell coined the term "mental test" in an 1890 
+publication. 
+â€¢ 
+Incorrect Choices: B, C, and D were other students of Wundt but did not coin 
+this term. 
+â€¢ 
+High-Yield Concept: J.M. Cattell = Mental Test. 
+24. Correct Answer: C 
+â€¢ 
+Rationale: Lightner Witmer is cited as the founder of clinical psychology for 
+establishing the first psychological clinic. 
+â€¢ 
+Incorrect Choices: B is for personality tests; A is for intelligence tests. 
+â€¢ 
+High-Yield Concept: Witmer = First Clinic/Clinical Psych Founder. 
+25. Correct Answer: B 
+â€¢ 
+Rationale: The Woodworth Psychoneurotic Inventory was the first widely used 
+self-report test of personality. 
+â€¢ 
+Incorrect Choices: It was not for children or sensory-motor skills; it was a 
+psychiatric interview in paper form. 
+â€¢ 
+High-Yield Concept: Woodworth = First Self-Report Personality Test. 
+26. Correct Answer: B 
+â€¢ 
+Rationale: Army Beta was developed for illiterate recruits during WWI. 
+â€¢ 
+Incorrect Choices: Army Alpha was for literate recruits. 
+â€¢ 
+High-Yield Concept: Army Beta = Illiterate/Non-English. 
+27. Correct Answer: Aâ€¢ 
+Rationale: Level A tests can be administered and interpreted with the aid of the 
+manual and a general orientation. 
+â€¢ 
+Incorrect Choices: Level B and C require higher technical knowledge or 
+advanced degrees. 
+â€¢ 
+High-Yield Concept: Level A = Manual + General orientation. 
+28. Correct Answer: B 
+â€¢ 
+Rationale: Level B tests require technical knowledge of test construction, use, 
+and supporting psychological studies. 
+â€¢ 
+Incorrect Choices: A refers to Level C; C refers to Level A. 
+â€¢ 
+High-Yield Concept: Level B = Technical/Psychometric knowledge. 
+29. Correct Answer: C 
+â€¢ 
+Rationale: Consent should include the purpose, reasons, and type of 
+instruments, but never the correct answers, as this compromises test security. 
+â€¢ 
+Incorrect Choices: A, B, and D are the three standard requirements for 
+informed consent. 
+â€¢ 
+High-Yield Concept: Informed Consent covers "Why" and "What," but not "How 
+to pass." 
+30. Correct Answer: B 
+â€¢ 
+Rationale: Privilege protects clients from disclosure in "judicial proceedings" and 
+belongs to the client. 
+â€¢ 
+Incorrect Choices: A refers to communication outside the courtroom. 
+â€¢ 
+High-Yield Concept: Privilege = Legal/Court protection; Confidentiality = 
+Professional/Private protection. 
+31. Correct Answer: C 
+â€¢ 
+Rationale: Psychologists have an ethical duty to keep communications 
+confidential but must recognize that privilege is not absolute and court orders can 
+mandate disclosure. 
+â€¢ 
+Incorrect Choices: A is too extreme; B ignores the initial ethical duty; D is illegal 
+(destruction of evidence). 
+â€¢ 
+High-Yield Concept: Ethics + Law = Informed resistance followed by 
+compliance if legally ordered. 
+32. Correct Answer: B 
+â€¢ 
+Rationale: The Psychology Act of 2009 in the Philippines is RA 10029. 
+â€¢ 
+Incorrect Choices: A is Guidance and Counseling; D is Data Privacy. 
+â€¢ 
+High-Yield Concept: RA 10029 = Philippine Psychology Law.33. Correct Answer: C 
+â€¢ 
+Rationale: Ethical guidelines state that deception is only used if necessary and 
+requires full debriefing afterward. 
+â€¢ 
+Incorrect Choices: A and B are related but different rights. 
+â€¢ 
+High-Yield Concept: Deception = Necessity + Debriefing. 
+34. Correct Answer: C 
+â€¢ 
+Rationale: Interval scales (like IQ) have no absolute zero, so a score is an 
+approximation and 0 doesn't mean "no intelligence". 
+â€¢ 
+Incorrect Choices: D has a true zero; A and B are simpler rankings/categories. 
+â€¢ 
+High-Yield Concept: Interval Scale = No absolute zero/Equal intervals. 
+35. Correct Answer: B 
+â€¢ 
+Rationale: A trait is defined as a distinguishable, relatively enduring way in which 
+individuals vary. 
+â€¢ 
+Incorrect Choices: A is less enduring; C is a category; D is the theoretical 
+concept itself. 
+â€¢ 
+High-Yield Concept: Trait = Relatively enduring variation. 
+36. Correct Answer: B 
+â€¢ 
+Rationale: A construct is an informed, scientific concept developed to describe 
+or explain behavior. 
+â€¢ 
+Incorrect Choices: A is physical; C is a raw score; D is a quality issue. 
+â€¢ 
+High-Yield Concept: Construct = Unobservable scientific concept. 
+37. Correct Answer: C 
+â€¢ 
+Rationale: Psychometric soundness refers to the key aspects of reliability and 
+validity. 
+â€¢ 
+Incorrect Choices: A and B are practical considerations but not "psychometric" 
+ones. 
+â€¢ 
+High-Yield Concept: Psychometric Soundness = Reliability + Validity. 
+38. Correct Answer: B 
+â€¢ 
+Rationale: Error refers to all factors on a test score beyond those specifically 
+measured by the test. 
+â€¢ 
+Incorrect Choices: A and D are specific types of errors or outcomes, not the 
+general definition of error variance. 
+â€¢ 
+High-Yield Concept: Error Variance = Influence of irrelevant variables. 
+39. Correct Answer: Aâ€¢ 
+Rationale: Early developers used culture-specific tests to "isolate" the cultural 
+variable in mental ability tests. 
+â€¢ 
+Incorrect Choices: B, C, and D are unethical or incorrect reasons. 
+â€¢ 
+High-Yield Concept: Culture-Specific = Isolating culture for fairness. 
+40. Correct Answer: C 
+â€¢ 
+Rationale: Testtakers have the right to findings and consent, but not to keep the 
+test protocols (booklets/manuals), as this violates test security. 
+â€¢ 
+Incorrect Choices: A, B, and D are established rights in the Cohen text. 
+â€¢ 
+High-Yield Concept: Test Security > Testtaker's right to the physical booklet.

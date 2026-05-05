@@ -1,20 +1,20 @@
 Abnormal Psychology PDF import report
 Total exported rows: 530
 
-Chapter 1: 40 questions | topic `chapter-1-overview`
-Chapter 2: 35 questions | topic `an-integrative-approach-to-psychopathology`
-Chapter 3: 35 questions | topic `clinical-assessment-and-diagnosis`
-Chapter 5: 35 questions | topic `anxiety-trauma-and-stressor-related-and-obsessive-compulsive-and-related-disorders`
-Chapter 6: 35 questions | topic `somatic-symptom-and-related-disorders-and-dissociative-disorders`
-Chapter 7: 35 questions | topic `mood-disorders-and-suicide`
-Chapter 8: 35 questions | topic `eating-and-sleepwake-disorders`
-Chapter 9: 35 questions | topic `physical-disorders-and-health-psychology`
-Chapter 10: 35 questions | topic `sexual-dysfunctions-paraphilic-disorders-and-gender-dysphoria`
-Chapter 11: 35 questions | topic `substance-related-addictive-and-impulse-control-disorders`
-Chapter 12: 35 questions | topic `personality-disorders`
-Chapter 13: 35 questions | topic `schizophrenia-spectrum-and-other-psychotic-disorders`
-Chapter 14: 35 questions | topic `neurodevelopmental-disorders`
-Chapter 15: 35 questions | topic `neurocognitive-disorders`
-Chapter 16: 35 questions | topic `mental-health-services-legal-and-ethical-issues`
+Chapter 1: 40 questions | topic `Chapter 1 Overview`
+Chapter 2: 35 questions | topic `An Integrative Approach to Psychopathology`
+Chapter 3: 35 questions | topic `Clinical Assessment and Diagnosis`
+Chapter 5: 35 questions | topic `Anxiety, Trauma- and Stressor-Related, and Obsessive Compulsive and Related Disorders`
+Chapter 6: 35 questions | topic `Somatic Symptom and Related Disorders and Dissociative Disorders`
+Chapter 7: 35 questions | topic `Mood Disorders and Suicide`
+Chapter 8: 35 questions | topic `Eating and Sleep–Wake Disorders`
+Chapter 9: 35 questions | topic `Physical Disorders and Health Psychology`
+Chapter 10: 35 questions | topic `Sexual Dysfunctions, Paraphilic Disorders, and Gender Dysphoria`
+Chapter 11: 35 questions | topic `Substance-Related, Addictive, and Impulse-Control Disorders`
+Chapter 12: 35 questions | topic `Personality Disorders`
+Chapter 13: 35 questions | topic `Schizophrenia Spectrum and Other Psychotic Disorders`
+Chapter 14: 35 questions | topic `Neurodevelopmental Disorders`
+Chapter 15: 35 questions | topic `Neurocognitive Disorders`
+Chapter 16: 35 questions | topic `Mental Health Services: Legal and Ethical Issues`
 Skipped Chapter 4 because no recoverable chapter content was present in the extracted PDF text.
-Chapter 1 topic was set to `chapter-1-overview` because the extracted PDF text did not expose a visible subtitle for that chapter.
+Chapter 1 topic was set to `Chapter 1 Overview` because the extracted PDF text did not expose a visible subtitle for that chapter.
