@@ -18,13 +18,15 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: APP_NAME
+    title: APP_NAME,
+    startupImage: ["/icons/app.png"]
   },
   icons: {
     icon: [
-      { url: "/icons/app-icon.png", type: "image/png" }
+      { url: "/icons/app.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" }
     ],
-    apple: [{ url: "/icons/app-icon.png", type: "image/png" }]
+    apple: [{ url: "/icons/app.png", type: "image/png" }]
   }
 };
 

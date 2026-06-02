@@ -11,7 +11,7 @@ const STATIC_ASSETS = [
   "/",
   OFFLINE_URL,
   "/manifest.webmanifest",
-  "/icons/app-icon.png"
+  "/icons/app.png"
 ];
 
 function isStaticAsset(url) {
