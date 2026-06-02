@@ -31,8 +31,8 @@ import { FloatingPomodoroWidget } from "@/components/study-technique/floating-po
 import { PwaInstallGuide } from "@/components/pwa-install-guide";
 import { createClient } from "@/lib/supabase/client";
 
-const LAST_ROLE_STORAGE_KEY = "psychboard-last-role";
-const LAST_ROUTE_STORAGE_KEY = "psychboard-last-route";
+const LAST_ROLE_STORAGE_KEY = "psycend-last-role";
+const LAST_ROUTE_STORAGE_KEY = "psycend-last-route";
 
 type NavItem = {
   href: Route;

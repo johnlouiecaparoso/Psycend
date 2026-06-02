@@ -1,5 +1,5 @@
 -- ============================================
--- DASHBOARD QUERIES FOR PSYCHPREP APPLICATION
+-- DASHBOARD QUERIES FOR PSYCEND APPLICATION
 -- ============================================
 -- Run these queries in Supabase SQL Editor to test dashboard functionality
 -- Replace 'YOUR_USER_ID' with actual user UUID from auth.users table

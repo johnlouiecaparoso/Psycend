@@ -32,7 +32,7 @@ const ADMIN_OFFLINE_ROUTES = [
   "/admin/reviewers"
 ];
 
-const WARMED_ROUTES_KEY = "psychboard-offline-warmed";
+const WARMED_ROUTES_KEY = "psycend-offline-warmed";
 
 export function OfflineSupport() {
   const { userId, userRole, loading } = useAuth();

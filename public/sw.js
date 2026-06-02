@@ -1,6 +1,6 @@
-const APP_SHELL_CACHE = "psychboard-app-shell-v5";
-const PAGE_CACHE = "psychboard-pages-v5";
-const DATA_CACHE = "psychboard-data-v5";
+const APP_SHELL_CACHE = "psycend-app-shell-v5";
+const PAGE_CACHE = "psycend-pages-v5";
+const DATA_CACHE = "psycend-data-v5";
 const OFFLINE_URL = "/offline";
 const LAST_PAGE_FALLBACK_KEY = "/__offline-last-page__";
 const IS_DEV_HOST =
@@ -11,8 +11,7 @@ const STATIC_ASSETS = [
   "/",
   OFFLINE_URL,
   "/manifest.webmanifest",
-  "/icons/icon-192.svg",
-  "/icons/icon-512.svg"
+  "/icons/app-icon.png"
 ];
 
 function isStaticAsset(url) {
@@ -54,7 +53,7 @@ self.addEventListener("activate", (event) => {
     event.waitUntil(
       caches.keys().then((keys) =>
         Promise.all(
-          keys.filter((key) => key.startsWith("psychboard-")).map((key) => caches.delete(key))
+          keys.filter((key) => key.startsWith("psycend-")).map((key) => caches.delete(key))
         )
       )
     );

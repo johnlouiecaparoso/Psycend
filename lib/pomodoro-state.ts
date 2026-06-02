@@ -1,6 +1,6 @@
 export const FOCUS_SECONDS = 25 * 60;
 export const BREAK_SECONDS = 5 * 60;
-export const POMODORO_STORAGE_KEY = "psychboard-pomodoro-widget";
+export const POMODORO_STORAGE_KEY = "psycend-pomodoro-widget";
 export const POMODORO_STATE_EVENT = "pomodoro-state-changed";
 
 export type PomodoroPhase = "focus" | "break";

@@ -18,7 +18,7 @@ export function PwaRegistrar() {
             const cacheKeys = await caches.keys();
             await Promise.all(
               cacheKeys
-                .filter((key) => key.startsWith("psychboard-"))
+                .filter((key) => key.startsWith("psycend-"))
                 .map((key) => caches.delete(key))
             );
           }

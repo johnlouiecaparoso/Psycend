@@ -17,7 +17,7 @@ type ChatThread = {
   messages: ChatMessage[];
 };
 
-const HISTORY_STORAGE_KEY = "psychboard-gemini-chat-history";
+const HISTORY_STORAGE_KEY = "psycend-gemini-chat-history";
 
 function normalizeAssistantText(text: string): string {
   return text

@@ -15,7 +15,7 @@ type EditableStudyTask = {
 };
 
 function buildTaskStorageKey(dateKey: string) {
-  return `psychboard-study-tasks:${dateKey}`;
+  return `psycend-study-tasks:${dateKey}`;
 }
 
 export function StudyTasksPanel({

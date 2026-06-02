@@ -169,7 +169,7 @@ export default function StudentStudyTechniquePage() {
       const studyTechniqueService = new StudyTechniqueService();
       await studyTechniqueService.applyTechnique("pomodoro");
       if (typeof window !== "undefined") {
-        window.localStorage.setItem("psychboard-active-study-technique", "pomodoro");
+        window.localStorage.setItem("psycend-active-study-technique", "pomodoro");
         window.dispatchEvent(new CustomEvent("study-technique-changed", { detail: { technique: "pomodoro" } }));
       }
       const updatedTechnique = await studyTechniqueService.getCurrentStudyTechnique(userId);
@@ -191,7 +191,7 @@ export default function StudentStudyTechniquePage() {
       const studyTechniqueService = new StudyTechniqueService();
       await studyTechniqueService.clearCurrentTechnique();
       if (typeof window !== "undefined") {
-        window.localStorage.removeItem("psychboard-active-study-technique");
+        window.localStorage.removeItem("psycend-active-study-technique");
         window.dispatchEvent(new CustomEvent("study-technique-changed", { detail: { technique: "practice_test" } }));
       }
       setCurrentTechnique(null);

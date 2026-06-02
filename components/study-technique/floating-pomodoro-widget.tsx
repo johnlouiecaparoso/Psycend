@@ -19,7 +19,7 @@ import { StudyTechniqueService } from "@/lib/supabase/study-technique-client";
 import type { StudyTechnique } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-const TECHNIQUE_CACHE_KEY = "psychboard-active-study-technique";
+const TECHNIQUE_CACHE_KEY = "psycend-active-study-technique";
 
 export function FloatingPomodoroWidget() {
   const { userId, userRole, loading } = useAuth();

@@ -3,7 +3,7 @@
 import type { ThemePreference, UserPreferences } from "@/lib/types";
 import { defaultUserPreferences } from "@/lib/types";
 
-export const THEME_STORAGE_KEY = "psychboard-theme";
+export const THEME_STORAGE_KEY = "psycend-theme";
 
 export function normalizePreferences(value: unknown): UserPreferences {
   const source = typeof value === "object" && value !== null ? (value as Partial<UserPreferences>) : {};

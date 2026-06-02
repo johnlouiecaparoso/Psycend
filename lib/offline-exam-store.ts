@@ -2,7 +2,7 @@
 
 import type { AttemptResult, ReviewQuestion } from "@/lib/types";
 
-const DB_NAME = "psychboard-offline-study";
+const DB_NAME = "psycend-offline-study";
 const DB_VERSION = 3;
 const FLASHCARD_STORE = "flashcard_decks";
 const EXAM_PACK_STORE = "exam_packs";
