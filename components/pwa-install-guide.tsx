@@ -35,11 +35,11 @@ export function PwaInstallGuide() {
             {isIOS ? <Share className="h-5 w-5" /> : <Info className="h-5 w-5" />}
           </div>
           <div className="space-y-2">
-            <p className="font-semibold">Install PsychBoard on your device</p>
+            <p className="font-semibold">Install Psycend on your device</p>
             <p className="text-sm text-muted-foreground">
               {isIOS
                 ? "On iPhone or iPad, open this app in Safari, tap Share, then choose Add to Home Screen."
-                : "Install the PWA so students can launch PsychBoard from the home screen and keep using cached study tools offline."}
+                : "Install the PWA so students can launch Psycend from the home screen and keep using cached study tools offline."}
             </p>
             {!isIOS ? <PwaInstallButton className="gap-2" /> : null}
           </div>

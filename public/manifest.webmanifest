@@ -1,6 +1,6 @@
 {
-  "name": "PsychBoard",
-  "short_name": "PsychBoard",
+  "name": "Psycend",
+  "short_name": "Psycend",
   "description": "Psychology board exam review platform with mock exams, flashcards, reviewers, and analytics.",
   "start_url": "/",
   "scope": "/",

@@ -1,6 +1,6 @@
-# PsychBoard
+# Psycend
 
-PsychBoard is a modern, mobile-responsive psychology board exam review platform built with Next.js App Router, TypeScript, Tailwind CSS, shadcn-style UI primitives, Supabase, React Hook Form, Zod, Recharts, and TanStack Table.
+Psycend is a modern, mobile-responsive psychology board exam review platform built with Next.js App Router, TypeScript, Tailwind CSS, shadcn-style UI primitives, Supabase, React Hook Form, Zod, Recharts, and TanStack Table.
 
 ## Included
 

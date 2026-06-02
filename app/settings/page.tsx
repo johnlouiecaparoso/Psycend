@@ -60,7 +60,7 @@ export default function SettingsPage() {
             feedbackTone = "error";
             feedbackMessage = "Notification permission was not granted, so push notifications stayed off.";
           } else {
-            new Notification("PsychBoard notifications enabled", {
+            new Notification("Psycend notifications enabled", {
               body: "You will now receive browser study reminders on this device when supported."
             });
           }

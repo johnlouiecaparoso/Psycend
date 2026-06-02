@@ -1,4 +1,4 @@
-export const APP_NAME = "PsychBoard";
+export const APP_NAME = "Psycend";
 
 export const ROLES = ["admin", "student"] as const;
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
