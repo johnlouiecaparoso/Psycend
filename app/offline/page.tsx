@@ -46,7 +46,7 @@ export default function OfflinePage() {
           <div>
             <h1 className="text-3xl font-bold tracking-tight">You are offline</h1>
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-              PsychBoard can still open cached study pages in the installed PWA, but live dashboards, uploads, and fresh exam data need an internet connection.
+              Psycend can still open cached study pages in the installed PWA, but live dashboards, uploads, and fresh exam data need an internet connection.
             </p>
           </div>
           <div className="rounded-2xl bg-muted/40 p-4 text-left text-sm text-muted-foreground">
