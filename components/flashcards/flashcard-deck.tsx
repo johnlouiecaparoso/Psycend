@@ -12,28 +12,43 @@ import type { ParsedImportRow, ReviewQuestion, StudyTechnique } from "@/lib/type
 type FlashcardItem = ParsedImportRow | ReviewQuestion;
 type ReviewMark = "know" | "hard" | "again";
 
+/**
+ * Cards show the full prompt and the full answer. Both sides used to be clipped
+ * (the question to ten words, the answer to two), which left the study text
+ * unreadable — "Negative reinforcement removes an aversive stimulus" rendered as
+ * "Negative reinforcement...".
+ */
 function buildFlashcardPrompt(question: string) {
-  const cleaned = question.replace(/\s+/g, " ").trim();
-  const withoutLeadingPrompt = cleaned
-    .replace(/^What is\s+/i, "")
-    .replace(/^Which\s+/i, "")
-    .replace(/^Who\s+/i, "")
-    .replace(/^When\s+/i, "")
-    .replace(/^Where\s+/i, "")
-    .replace(/^Why\s+/i, "")
-    .replace(/^How\s+/i, "")
-    .replace(/^A[n]?\s+/i, "");
-
-  const words = withoutLeadingPrompt.split(" ");
-  const shortened = words.slice(0, 10).join(" ");
-  return shortened.length < withoutLeadingPrompt.length ? `${shortened}...` : shortened;
+  return question.replace(/\s+/g, " ").trim();
 }
 
-function buildShortAnswer(answer: string) {
-  const cleaned = answer.replace(/\s+/g, " ").trim();
-  const words = cleaned.split(" ");
-  const shortened = words.slice(0, 2).join(" ");
-  return shortened.length < cleaned.length ? `${shortened}...` : shortened;
+function buildFlashcardAnswer(answer: string) {
+  return answer.replace(/\s+/g, " ").trim();
+}
+
+/** Long answers need a smaller type scale so they still fit the card. */
+function getAnswerTextClass(answer: string) {
+  if (answer.length > 220) {
+    return "text-base leading-snug sm:text-lg";
+  }
+
+  if (answer.length > 90) {
+    return "text-lg leading-snug sm:text-xl";
+  }
+
+  return "text-xl leading-tight sm:text-3xl";
+}
+
+function getPromptTextClass(prompt: string) {
+  if (prompt.length > 220) {
+    return "text-sm leading-snug sm:text-base";
+  }
+
+  if (prompt.length > 90) {
+    return "text-base leading-snug sm:text-lg";
+  }
+
+  return "text-lg leading-tight sm:text-2xl";
 }
 
 function shuffleItems<T>(items: T[]) {
@@ -109,6 +124,8 @@ export function FlashcardDeck({
   const current = orderedCards[index];
   const progress = orderedCards.length > 0 ? (Object.keys(reviewState).length / orderedCards.length) * 100 : 0;
   const correctChoice = current?.choices.find((choice) => choice.is_correct);
+  const promptText = current ? buildFlashcardPrompt(current.question_text) : "";
+  const answerText = buildFlashcardAnswer(correctChoice?.choice_text ?? "No answer available");
 
   const subjectProgress = React.useMemo(() => {
     const subjectMap = new Map<string, { total: number; know: number; hard: number; again: number }>();
@@ -206,14 +223,19 @@ export function FlashcardDeck({
               <span className="max-w-[calc(100%-2rem)] rounded-full bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:text-xs sm:tracking-[0.2em]">{flipped ? "Answer" : "Quick prompt"}</span>
               <RotateCcw className="h-4 w-4 text-muted-foreground" />
             </div>
-            <div className="flex items-center justify-center text-center">
+            <div className="flex items-center justify-center overflow-y-auto py-4 text-center">
               {flipped ? (
                 <div className="w-full max-w-full">
-                  <h3 className="break-words text-xl font-semibold leading-tight sm:text-3xl">{buildShortAnswer(correctChoice?.choice_text ?? "No answer available")}</h3>
+                  <h3 className={`break-words font-semibold ${getAnswerTextClass(answerText)}`}>{answerText}</h3>
                   <p className="mt-4 text-sm text-muted-foreground">Correct option: {correctChoice?.choice_key ?? "-"}</p>
+                  {current.explanation ? (
+                    <p className="mx-auto mt-4 max-w-prose text-sm leading-relaxed text-muted-foreground">
+                      {current.explanation}
+                    </p>
+                  ) : null}
                 </div>
               ) : (
-                <h3 className="break-words text-lg font-semibold leading-tight sm:text-2xl">{buildFlashcardPrompt(current.question_text)}</h3>
+                <h3 className={`break-words font-semibold ${getPromptTextClass(promptText)}`}>{promptText}</h3>
               )}
             </div>
           </button>

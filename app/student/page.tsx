@@ -35,14 +35,19 @@ export default function StudentPage() {
       try {
         const dashboardService = new DashboardService();
         const studyTechniqueService = new StudyTechniqueService();
-        const [statsData, performanceData, weakTopicsData, recentExamsData, readinessData, studyOverviewData, currentTechniqueData] = await Promise.all([
+        const [statsData, performanceData, weakTopicsData, recentExamsData, currentTechniqueData] = await Promise.all([
           dashboardService.getStudentStats(userId),
           dashboardService.getPerformanceData(userId),
           dashboardService.getWeakTopics(userId),
           dashboardService.getRecentExams(userId),
-          dashboardService.getReadinessScore(userId),
-          dashboardService.getStudyOverview(userId),
           studyTechniqueService.getCurrentStudyTechnique(userId)
+        ]);
+
+        // Readiness and the study overview derive from data already loaded above,
+        // so hand it over instead of letting them re-query the same tables.
+        const [readinessData, studyOverviewData] = await Promise.all([
+          dashboardService.getReadinessScore(userId, { weakTopics: weakTopicsData, performanceData }),
+          dashboardService.getStudyOverview(userId, { weakTopics: weakTopicsData })
         ]);
 
         setStats(statsData);

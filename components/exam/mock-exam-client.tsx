@@ -6,7 +6,7 @@ import { Minus, Plus, AlertTriangle, Clock3, WifiOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PomodoroFocusTimer } from "@/components/study-technique/pomodoro-focus-timer";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Progress } from "@/components/ui/progress";
 import { useAuth } from "@/lib/auth-context";
 import { buildOfflineResult, queueOfflineAttempt, saveOfflineResult } from "@/lib/offline-exam-store";
@@ -111,21 +111,63 @@ export function MockExamClient({
     return () => window.clearInterval(timer);
   }, [hasHydratedDraft]);
 
-  React.useEffect(() => {
-    if (!hasHydratedDraft || typeof window === "undefined") {
+  const draftValuesRef = React.useRef({ currentIndex, timeLeft, answers });
+  draftValuesRef.current = { currentIndex, timeLeft, answers };
+
+  const persistDraft = React.useCallback(() => {
+    if (typeof window === "undefined") {
       return;
     }
 
     const draft: DraftPayload = {
-      currentIndex,
-      timeLeft,
-      answers,
+      ...draftValuesRef.current,
       updatedAt: new Date().toISOString()
     };
 
     window.localStorage.setItem(getDraftKey(sessionKey), JSON.stringify(draft));
     setDraftStatus(`Progress saved locally at ${new Date(draft.updatedAt).toLocaleTimeString()}.`);
-  }, [answers, currentIndex, hasHydratedDraft, sessionKey, timeLeft]);
+  }, [sessionKey]);
+
+  // Save right away when the student answers a question or navigates.
+  React.useEffect(() => {
+    if (!hasHydratedDraft) {
+      return;
+    }
+
+    persistDraft();
+  }, [answers, currentIndex, hasHydratedDraft, persistDraft]);
+
+  // The ticking clock used to retrigger the save above, serialising the entire
+  // draft to localStorage once per second. Persist remaining time on a slower beat.
+  React.useEffect(() => {
+    if (!hasHydratedDraft || typeof window === "undefined") {
+      return;
+    }
+
+    const interval = window.setInterval(persistDraft, 10000);
+    return () => window.clearInterval(interval);
+  }, [hasHydratedDraft, persistDraft]);
+
+  // A timed session has to end when the clock does. Without this the exam simply
+  // sits at 00:00 and the student can keep answering for as long as they like.
+  const hasHandledExpiryRef = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!hasHydratedDraft || timeLeft > 0 || hasHandledExpiryRef.current) {
+      return;
+    }
+
+    hasHandledExpiryRef.current = true;
+
+    if (Object.keys(answers).length === 0) {
+      setDraftStatus("Time is up. Nothing was submitted because no answers were selected.");
+      setSubmitError(`Time is up for this ${mode}. Select at least one answer to submit an attempt.`);
+      return;
+    }
+
+    setDraftStatus(`Time is up. Submitting your ${mode} automatically...`);
+    void handleSubmit();
+  }, [answers, hasHydratedDraft, mode, timeLeft]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") {
@@ -334,14 +376,18 @@ export function MockExamClient({
                   <Button className="w-full sm:w-auto sm:self-end">{mode === "quiz" ? "Submit quiz" : "Submit exam"}</Button>
                 </DialogTrigger>
                 <DialogContent>
-                  <h3 className="text-xl font-semibold">Submit {mode === "quiz" ? "quiz" : "attempt"}?</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <DialogTitle className="text-xl font-semibold">
+                    Submit {mode === "quiz" ? "quiz" : "attempt"}?
+                  </DialogTitle>
+                  <DialogDescription className="mt-2 text-sm text-muted-foreground">
                     Once submitted, the system will compute your score, weak topics, and explanations review.
-                  </p>
+                  </DialogDescription>
                   {submitError ? <p className="mt-3 text-sm text-destructive">{submitError}</p> : null}
                   <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-                    <Button variant="outline">Cancel</Button>
-                    <Button onClick={handleSubmit} disabled={isSubmitting}>
+                    <DialogClose asChild>
+                      <Button variant="outline" className="w-full sm:w-auto">Cancel</Button>
+                    </DialogClose>
+                    <Button className="w-full sm:w-auto" onClick={handleSubmit} disabled={isSubmitting}>
                       {isSubmitting ? "Submitting..." : `Confirm ${mode === "quiz" ? "quiz" : "submit"}`}
                     </Button>
                   </div>

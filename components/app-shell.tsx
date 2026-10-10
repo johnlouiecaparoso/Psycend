@@ -28,7 +28,9 @@ import type { Role } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { UserMenu } from "@/components/auth/user-menu";
 import { FloatingPomodoroWidget } from "@/components/study-technique/floating-pomodoro-widget";
+import { PolicyConsentDialog } from "@/components/legal/policy-consent-dialog";
 import { PwaInstallGuide } from "@/components/pwa-install-guide";
+import { SiteFooter } from "@/components/site-footer";
 import { createClient } from "@/lib/supabase/client";
 
 const LAST_ROLE_STORAGE_KEY = "psycend-last-role";
@@ -202,6 +204,20 @@ export function AppShell({
     setIsSidebarOpen(false);
   }, [pathname]);
 
+  // Stop the page behind the mobile drawer from scrolling while it is open.
+  useEffect(() => {
+    if (typeof document === "undefined" || !isSidebarOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isSidebarOpen]);
+
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
@@ -361,8 +377,8 @@ export function AppShell({
   );
 
   return (
-    <div className="min-h-screen">
-      <div className="container-shell py-4 sm:py-6">
+    <div className="flex min-h-screen flex-col">
+      <div className="container-shell flex-1 py-4 sm:py-6">
         <div className="grid gap-6 lg:items-start lg:grid-cols-[260px_1fr]">
           <div className="hidden lg:block">{sidebar}</div>
           <main className="min-w-0 space-y-5 sm:space-y-6">
@@ -390,15 +406,30 @@ export function AppShell({
         </div>
       </div>
 
+      <SiteFooter />
+
       {isSidebarOpen ? (
-        <div className="fixed inset-0 z-40 bg-slate-950/50 lg:hidden">
+        <div
+          role="presentation"
+          onClick={() => setIsSidebarOpen(false)}
+          className="fixed inset-0 z-40 bg-slate-950/50 lg:hidden"
+        >
           <div className="h-[100dvh] overflow-hidden p-3 sm:p-4">
-            <div className="h-full w-[min(17.5rem,calc(100vw-1.5rem))] max-w-full">{sidebar}</div>
+            {/* Tapping the drawer itself must not close it — only the backdrop. */}
+            <div
+              role="presentation"
+              onClick={(event) => event.stopPropagation()}
+              className="h-full w-[min(17.5rem,calc(100vw-1.5rem))] max-w-full"
+            >
+              {sidebar}
+            </div>
           </div>
         </div>
       ) : null}
 
       {role === "student" ? <FloatingPomodoroWidget /> : null}
+
+      <PolicyConsentDialog />
     </div>
   );
 }

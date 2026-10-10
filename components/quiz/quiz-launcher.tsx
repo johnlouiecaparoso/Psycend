@@ -58,6 +58,24 @@ function buildChapterDisplayTitle(exam: MockExamSummary & { chapterLabel: string
   return topic ? `${chapterBase} ${topic}` : chapterLabel;
 }
 
+const LIMIT_PRESETS = [5, 10, 15, 20, 25, 30, 35, 40];
+
+/**
+ * Filtering the presets alone left the dropdown empty for chapters with fewer
+ * than five questions, so always offer the full set as a choice too.
+ */
+function buildLimitOptions(questionCount: number) {
+  if (questionCount <= 0) {
+    return [];
+  }
+
+  const cappedCount = Math.min(questionCount, 40);
+  const options = new Set(LIMIT_PRESETS.filter((value) => value <= questionCount));
+  options.add(cappedCount);
+
+  return Array.from(options).sort((left, right) => left - right);
+}
+
 export function QuizLauncher({ exams }: { exams: MockExamSummary[] }) {
   const router = useRouter();
   const [limits, setLimits] = React.useState<Record<string, string>>({});
@@ -308,14 +326,11 @@ export function QuizLauncher({ exams }: { exams: MockExamSummary[] }) {
                     onChange={(event) => setLimits((prev) => ({ ...prev, [exam.id]: event.target.value }))}
                     className="h-11 w-full rounded-2xl border bg-background px-4 py-2 text-sm text-foreground"
                   >
-                    {[5, 10, 15, 20, 25, 30, 35, 40]
-                      .filter((value, index, array) => value <= exam.questionCount && array.indexOf(value) === index)
-                      .sort((a, b) => a - b)
-                      .map((value) => (
-                        <option key={`${exam.id}-${value}`} value={value}>
-                          {value} items
-                        </option>
-                      ))}
+                    {buildLimitOptions(exam.questionCount).map((value) => (
+                      <option key={`${exam.id}-${value}`} value={value}>
+                        {value} items
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="space-y-2">

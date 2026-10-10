@@ -1,5 +1,6 @@
 import { createClient } from "./client";
 import { inferChapterLabel, stripChapterFromTopic } from "@/lib/review-content";
+import { fetchAllRows, fetchAllRowsForIds } from "@/lib/supabase/pagination";
 
 type SupabaseClient = ReturnType<typeof createClient>;
 
@@ -62,7 +63,7 @@ export class DashboardService {
     try {
       const { data: attempts, error } = await this.client
         .from("exam_attempts")
-        .select("*")
+        .select("score")
         .eq("student_id", studentId)
         .not("submitted_at", "is", null);
 
@@ -70,7 +71,7 @@ export class DashboardService {
 
       const totalExams = attempts?.length || 0;
       const averageScore = attempts?.length
-        ? attempts.reduce((sum, attempt) => sum + (attempt.score || 0), 0) / attempts.length
+        ? attempts.reduce((sum, attempt) => sum + (Number(attempt.score) || 0), 0) / attempts.length
         : 0;
 
       const studyStreak = await this.calculateStudyStreak(studentId);
@@ -106,7 +107,8 @@ export class DashboardService {
           if (!subjectScores[subjectName]) {
             subjectScores[subjectName] = [];
           }
-          subjectScores[subjectName].push(attempt.score);
+          // A null score would poison the average and render the bar as NaN.
+          subjectScores[subjectName].push(Number(attempt.score) || 0);
         }
       });
 
@@ -136,16 +138,18 @@ export class DashboardService {
 
       const attemptIds = attempts.map((a) => a.id);
 
-      const { data, error } = await this.client
-        .from("exam_answers")
-        .select("is_correct, exam_questions(topics(name))")
-        .in("attempt_id", attemptIds);
-
-      if (error) throw error;
+      const data = await fetchAllRowsForIds<any, string>(attemptIds, (idChunk, from, to) =>
+        this.client
+          .from("exam_answers")
+          .select("is_correct, exam_questions(topics(name))")
+          .in("attempt_id", idChunk)
+          .order("id", { ascending: true })
+          .range(from, to)
+      );
 
       const topicStats: { [key: string]: { correct: number; total: number } } = {};
 
-      data?.forEach((answer: any) => {
+      data.forEach((answer: any) => {
         const topicName = answer.exam_questions?.topics?.name;
         if (topicName) {
           if (!topicStats[topicName]) {
@@ -187,7 +191,7 @@ export class DashboardService {
         data?.map((exam: any) => ({
           id: exam.id,
           title: exam.mock_exams?.title || "Unknown Exam",
-          score: Math.round(exam.score),
+          score: Math.round(Number(exam.score) || 0),
           date: new Date(exam.submitted_at).toLocaleDateString()
         })) || []
       );
@@ -197,10 +201,18 @@ export class DashboardService {
     }
   }
 
-  async getReadinessScore(studentId: string): Promise<ReadinessData> {
+  /**
+   * `precomputed` lets a caller that already loaded weak topics and performance
+   * data reuse them. Without it the student dashboard re-runs both queries here
+   * and again in getStudyOverview, tripling the requests behind one page load.
+   */
+  async getReadinessScore(
+    studentId: string,
+    precomputed?: { weakTopics?: WeakTopic[]; performanceData?: PerformanceData[] }
+  ): Promise<ReadinessData> {
     try {
-      const weakTopics = await this.getWeakTopics(studentId);
-      const performanceData = await this.getPerformanceData(studentId);
+      const weakTopics = precomputed?.weakTopics ?? (await this.getWeakTopics(studentId));
+      const performanceData = precomputed?.performanceData ?? (await this.getPerformanceData(studentId));
       const averageScore = performanceData.length > 0
         ? performanceData.reduce((sum, perf) => sum + perf.score, 0) / performanceData.length
         : 0;
@@ -221,11 +233,14 @@ export class DashboardService {
     }
   }
 
-  async getStudyOverview(studentId: string): Promise<StudentStudyOverview> {
+  async getStudyOverview(
+    studentId: string,
+    precomputed?: { weakTopics?: WeakTopic[] }
+  ): Promise<StudentStudyOverview> {
     const [availableExamsRes, availableReviewersRes, weakTopics] = await Promise.all([
       this.client.from("mock_exams").select("id", { count: "exact", head: true }),
       this.client.from("review_materials").select("id", { count: "exact", head: true }),
-      this.getWeakTopics(studentId)
+      precomputed?.weakTopics ?? this.getWeakTopics(studentId)
     ]);
 
     return {
@@ -257,14 +272,16 @@ export class DashboardService {
   }
 
   async getSubjectDashboardGraphData(studentId: string): Promise<SubjectDashboardGraphPoint[]> {
-    // Step 1: Fetch all questions grouped by subject and chapter
-    const { data: questions, error: questionsError } = await this.client
-      .from("exam_questions")
-      .select("id, topics(name), subjects(name), mock_exams(title, subjects(name))");
-
-    if (questionsError) {
-      throw questionsError;
-    }
+    // Step 1: Fetch all questions grouped by subject and chapter.
+    // This is a whole-table read, so it has to page past the 1000-row response cap
+    // or the chapter inventory silently covers only part of the question bank.
+    const questions = await fetchAllRows<any>((from, to) =>
+      this.client
+        .from("exam_questions")
+        .select("id, topics(name), subjects(name), mock_exams(title, subjects(name))")
+        .order("id", { ascending: true })
+        .range(from, to)
+    );
 
     const subjectChapters = new Map<string, Set<string>>();
 
@@ -278,7 +295,7 @@ export class DashboardService {
     };
 
     // Build complete chapter inventory per subject from ALL available content (exams + quizzes)
-    (questions ?? []).forEach((question: any) => {
+    questions.forEach((question: any) => {
       const subjectName = question.subjects?.name ?? question.mock_exams?.subjects?.name ?? "Unassigned Subject";
       const chapterLabel = resolveChapterLabel(question.topics?.name, question.mock_exams?.title);
       const current = subjectChapters.get(subjectName) ?? new Set<string>();
@@ -309,19 +326,19 @@ export class DashboardService {
 
     // Step 3: Fetch answers from both exams and quizzes to calculate real performance data
     if (attemptIds.length > 0) {
-      const { data: answers, error: answersError } = await this.client
-        .from("exam_answers")
-        .select("is_correct, exam_questions(id, topics(name), subjects(name), mock_exams(title, subjects(name)))")
-        .in("attempt_id", attemptIds);
-
-      if (answersError) {
-        throw answersError;
-      }
+      const answers = await fetchAllRowsForIds<any, string>(attemptIds, (idChunk, from, to) =>
+        this.client
+          .from("exam_answers")
+          .select("is_correct, exam_questions(id, topics(name), subjects(name), mock_exams(title, subjects(name)))")
+          .in("attempt_id", idChunk)
+          .order("id", { ascending: true })
+          .range(from, to)
+      );
 
       // Track accuracy stats per subject-topic combination
       const statsBySubjectTopic = new Map<string, { correct: number; total: number }>();
 
-      (answers ?? []).forEach((answer: any) => {
+      answers.forEach((answer: any) => {
         const question = answer.exam_questions;
         if (!question) return;
 
@@ -464,19 +481,27 @@ export class DashboardService {
       if (error) throw error;
       if (!data || data.length === 0) return 0;
 
-      const dates = data.map((attempt) => new Date(attempt.submitted_at).toDateString());
-      const uniqueDates = [...new Set(dates)];
-      let streak = 0;
-      const currentDate = new Date();
+      const studiedDays = new Set(data.map((attempt) => new Date(attempt.submitted_at).toDateString()));
+      const today = new Date();
 
-      for (let i = 0; i < uniqueDates.length; i++) {
-        const expectedDate = new Date(currentDate);
-        expectedDate.setDate(currentDate.getDate() - i);
-        if (uniqueDates.includes(expectedDate.toDateString())) {
-          streak++;
-        } else {
-          break;
-        }
+      const dayOffset = (offset: number) => {
+        const date = new Date(today);
+        date.setDate(today.getDate() - offset);
+        return date.toDateString();
+      };
+
+      // A student who has not practised yet today still has an unbroken streak,
+      // so start counting at yesterday when today has no attempt.
+      let offset = studiedDays.has(dayOffset(0)) ? 0 : 1;
+
+      if (offset === 1 && !studiedDays.has(dayOffset(1))) {
+        return 0;
+      }
+
+      let streak = 0;
+      while (studiedDays.has(dayOffset(offset))) {
+        streak++;
+        offset++;
       }
 
       return streak;

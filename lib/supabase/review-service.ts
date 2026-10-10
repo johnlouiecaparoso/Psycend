@@ -3,11 +3,13 @@ import type { createClient } from "@/lib/supabase/server";
 import {
   compareChapterLabels,
   detectImportTypeFromTitle,
+  getImportPrefix,
   inferChapterLabel,
   stripChapterFromTopic,
   stripImportPrefix,
   stripUploadSuffix
 } from "@/lib/review-content";
+import { fetchAllRows, fetchAllRowsForIds } from "@/lib/supabase/pagination";
 import type { ImportType } from "@/lib/types";
 
 type ServerClient = Awaited<ReturnType<typeof createClient>>;
@@ -35,15 +37,40 @@ export async function getMockExamSummaries(
   supabase: ServerClient,
   contentType: ImportType = "exam"
 ): Promise<MockExamSummary[]> {
-  const { data, error } = await supabase
-    .from("mock_exams")
-    .select("id, title, subjects(name), exam_questions(id, topic_id, topics(name))")
-    .order("created_at", { ascending: false });
+  // Filter by the import prefix in the database instead of pulling every exam back
+  // and discarding most of them client-side.
+  const exams = await fetchAllRows<any>((from, to) =>
+    supabase
+      .from("mock_exams")
+      .select("id, title, subjects(name)")
+      .ilike("title", `${getImportPrefix(contentType)}%`)
+      .order("created_at", { ascending: false })
+      .range(from, to)
+  );
 
-  if (error) throw error;
+  const matchingExams = exams.filter((exam: any) => detectImportTypeFromTitle(exam.title ?? "") === contentType);
 
-  const rawSummaries = (data ?? [])
-    .filter((exam: any) => detectImportTypeFromTitle(exam.title ?? "") === contentType)
+  // Questions are fetched separately and paginated. Embedding them in the exam
+  // select returns one enormous payload and hides how many rows came back.
+  const questions = await fetchAllRowsForIds<any, string>(
+    matchingExams.map((exam: any) => exam.id),
+    (examIds, from, to) =>
+      supabase
+        .from("exam_questions")
+        .select("id, mock_exam_id, topic_id, topics(name)")
+        .in("mock_exam_id", examIds)
+        .order("id", { ascending: true })
+        .range(from, to)
+  );
+
+  const questionsByExamId = new Map<string, any[]>();
+  questions.forEach((question: any) => {
+    const current = questionsByExamId.get(question.mock_exam_id) ?? [];
+    current.push(question);
+    questionsByExamId.set(question.mock_exam_id, current);
+  });
+
+  const rawSummaries = matchingExams
     .flatMap<MockExamSummary>((exam: any) => {
       const normalizedTitle = stripUploadSuffix(stripImportPrefix(exam.title ?? ""));
       const subject = exam.subjects?.name ?? "Unassigned Subject";
@@ -52,7 +79,7 @@ export async function getMockExamSummaries(
         { topicId: string | null; topicName: string }[]
       >();
 
-      (exam.exam_questions ?? []).forEach((question: any) => {
+      (questionsByExamId.get(exam.id) ?? []).forEach((question: any) => {
         const topicName = question.topics?.name ?? "General";
         const chapterLabel = inferChapterLabel(topicName) ?? inferChapterLabel(normalizedTitle) ?? "Chapter 1";
         const current = chapterGroups.get(chapterLabel) ?? [];
@@ -120,30 +147,61 @@ export async function getQuestionBankRows(
   supabase: ServerClient,
   contentType?: ImportType
 ): Promise<ReviewQuestion[]> {
-  const { data, error } = await supabase
-    .from("exam_questions")
-    .select(
-      "id, mock_exam_id, question_text, explanation, difficulty, subjects(name), topics(name), exam_choices(choice_key, choice_text, is_correct), mock_exams(title)"
-    )
-    .order("created_at", { ascending: false });
+  const baseColumns =
+    "id, mock_exam_id, question_text, explanation, difficulty, subjects(name), topics(name), exam_choices(choice_key, choice_text, is_correct)";
 
-  if (error) throw error;
-  return (data ?? [])
+  const fetchUnfiltered = () =>
+    fetchAllRows<any>((from, to) =>
+      supabase
+        .from("exam_questions")
+        .select(`${baseColumns}, mock_exams(title)`)
+        .order("created_at", { ascending: false })
+        .range(from, to)
+    );
+
+  let rows: any[];
+
+  if (contentType) {
+    // Push the content-type filter into the database. Filtering only after the
+    // fetch meant flashcards came back empty whenever the newest 1000 questions
+    // happened to all be exam or quiz imports.
+    try {
+      rows = await fetchAllRows<any>((from, to) =>
+        supabase
+          .from("exam_questions")
+          .select(`${baseColumns}, mock_exams!inner(title)`)
+          .ilike("mock_exams.title", `${getImportPrefix(contentType)}%`)
+          .order("created_at", { ascending: false })
+          .range(from, to)
+      );
+    } catch (error) {
+      // Fall back to filtering in memory if the embedded filter is rejected.
+      // Slower, but the paginated fetch still returns the complete question bank.
+      console.error("Embedded content-type filter failed, falling back to a full scan:", error);
+      rows = await fetchUnfiltered();
+    }
+  } else {
+    rows = await fetchUnfiltered();
+  }
+
+  return rows
     .filter((row: any) => !contentType || detectImportTypeFromTitle(row.mock_exams?.title ?? "") === contentType)
     .map(mapQuestionRow);
 }
 
 export async function getMockExamQuestions(supabase: ServerClient, examId: string): Promise<ReviewQuestion[]> {
-  const { data, error } = await supabase
-    .from("exam_questions")
-    .select(
-      "id, mock_exam_id, question_text, explanation, difficulty, subjects(name), topics(name), exam_choices(choice_key, choice_text, is_correct)"
-    )
-    .eq("mock_exam_id", examId)
-    .order("created_at", { ascending: true });
+  const rows = await fetchAllRows<any>((from, to) =>
+    supabase
+      .from("exam_questions")
+      .select(
+        "id, mock_exam_id, question_text, explanation, difficulty, subjects(name), topics(name), exam_choices(choice_key, choice_text, is_correct)"
+      )
+      .eq("mock_exam_id", examId)
+      .order("created_at", { ascending: true })
+      .range(from, to)
+  );
 
-  if (error) throw error;
-  return (data ?? []).map(mapQuestionRow);
+  return rows.map(mapQuestionRow);
 }
 
 export async function getWeakTopicNamesForStudent(supabase: ServerClient, studentId: string): Promise<string[]> {
@@ -158,17 +216,17 @@ export async function getWeakTopicNamesForStudent(supabase: ServerClient, studen
   }
 
   const attemptIds = attempts.map((attempt: any) => attempt.id);
-  const { data: answers, error: answersError } = await supabase
-    .from("exam_answers")
-    .select("is_correct, exam_questions(topics(name))")
-    .in("attempt_id", attemptIds);
-
-  if (answersError) {
-    throw answersError;
-  }
+  const answers = await fetchAllRowsForIds<any, string>(attemptIds, (idChunk, from, to) =>
+    supabase
+      .from("exam_answers")
+      .select("is_correct, exam_questions(topics(name))")
+      .in("attempt_id", idChunk)
+      .order("id", { ascending: true })
+      .range(from, to)
+  );
 
   const topicStats = new Map<string, { correct: number; total: number }>();
-  (answers ?? []).forEach((answer: any) => {
+  answers.forEach((answer: any) => {
     const topicName = answer.exam_questions?.topics?.name;
     if (!topicName) return;
     const current = topicStats.get(topicName) ?? { correct: 0, total: 0 };
@@ -195,7 +253,26 @@ export async function submitMockExamAttempt({
   mockExamId: string;
   answers: { questionId: string; selectedChoice: "A" | "B" | "C" | "D" }[];
 }) {
-  const questionIds = answers.map((answer) => answer.questionId);
+  const submittedQuestionIds = answers.map((answer) => answer.questionId);
+
+  // Only score questions that actually belong to this exam, so a tampered payload
+  // cannot inject question ids from another set.
+  const { data: examQuestions, error: examQuestionsError } = await supabase
+    .from("exam_questions")
+    .select("id")
+    .eq("mock_exam_id", mockExamId)
+    .in("id", submittedQuestionIds);
+
+  if (examQuestionsError) throw examQuestionsError;
+
+  const validQuestionIds = new Set((examQuestions ?? []).map((question: any) => question.id));
+  const validAnswers = answers.filter((answer) => validQuestionIds.has(answer.questionId));
+
+  if (validAnswers.length === 0) {
+    throw new Error("None of the submitted answers belong to this exam.");
+  }
+
+  const questionIds = validAnswers.map((answer) => answer.questionId);
   const { data: correctChoices, error: correctChoicesError } = await supabase
     .from("exam_choices")
     .select("question_id, choice_key")
@@ -209,7 +286,7 @@ export async function submitMockExamAttempt({
     correctMap.set(choice.question_id, choice.choice_key);
   });
 
-  const answerRows = answers.map((answer) => ({
+  const answerRows = validAnswers.map((answer) => ({
     question_id: answer.questionId,
     selected_choice: answer.selectedChoice,
     is_correct: correctMap.get(answer.questionId) === answer.selectedChoice

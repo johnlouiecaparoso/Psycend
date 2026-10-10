@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, BrainCircuit, ChartColumn, FileSpreadsheet } from "lucide-react";
 import { PwaInstallButton } from "@/components/pwa-install-button";
+import { SiteFooter } from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -27,7 +28,8 @@ const features = [
 
 export default function LandingPage() {
   return (
-    <main className="container-shell py-8 sm:py-12">
+    <div className="flex min-h-screen flex-col">
+      <main className="container-shell flex-1 py-8 sm:py-12">
       <section className="rounded-[32px] border bg-card/90 p-8 text-card-foreground shadow-soft backdrop-blur sm:p-12">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
           <div>
@@ -86,10 +88,13 @@ export default function LandingPage() {
                 <p className="mt-2 text-sm text-muted-foreground">{feature.description}</p>
               </CardContent>
             </Card>
-          );
-        })}
-      </section>
-    </main>
+            );
+          })}
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }
 

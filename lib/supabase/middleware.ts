@@ -31,12 +31,19 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
   
   const pathname = request.nextUrl.pathname;
-  const isProtectedRoute =
-    pathname.startsWith("/dashboard") ||
-    pathname.startsWith("/admin") ||
-    pathname.startsWith("/instructor") ||
-    pathname.startsWith("/student");
-  
+  // Keep this list in sync with the matcher in middleware.ts. /profile and /settings
+  // were matched but not listed here, so signed-out visitors rendered an empty
+  // "please sign in" shell instead of being sent to the login page.
+  const isProtectedRoute = [
+    "/dashboard",
+    "/admin",
+    "/instructor",
+    "/student",
+    "/profile",
+    "/settings"
+  ].some((route) => pathname === route || pathname.startsWith(`${route}/`));
+
+
   if (isProtectedRoute && !user) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/login";

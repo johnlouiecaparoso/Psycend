@@ -92,6 +92,17 @@ export function RegisterForm() {
           <Button className="w-full" disabled={isSubmitting} type="submit">
             Create account
           </Button>
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            By creating an account you agree to our{" "}
+            <Link href="/terms" className="font-semibold text-primary">
+              User Agreement
+            </Link>{" "}
+            and{" "}
+            <Link href="/privacy" className="font-semibold text-primary">
+              Privacy Policy
+            </Link>
+            . You will be asked to confirm these the first time you sign in.
+          </p>
           {submitError ? <p className="text-sm text-destructive">{submitError}</p> : null}
           {submitSuccess ? <p className="text-sm text-emerald-600">{submitSuccess}</p> : null}
           <p className="text-sm text-muted-foreground">

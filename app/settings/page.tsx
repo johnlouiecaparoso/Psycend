@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/app-shell";
+import { DeleteAccountCard } from "@/components/account/delete-account-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -189,6 +190,10 @@ export default function SettingsPage() {
         {message ? (
           <p className={messageTone === "success" ? "text-sm text-emerald-600" : "text-sm text-rose-600"}>{message}</p>
         ) : null}
+      </div>
+
+      <div className="mt-8">
+        <DeleteAccountCard isStudent={shellRole === "student"} />
       </div>
     </AppShell>
   );
